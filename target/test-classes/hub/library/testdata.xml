@@ -14,7 +14,7 @@
 	<entry key="environment">Prod</entry>
 	<!-- <entry key="remoteUrl">http://10.0.1.139:8080/wd/hub</entry> -->
 	<!-- 	<entry key="local_url">http://192.168.0.20:8080/</entry> -->
-	<entry key="prod_url">https://olddev.rppropertyhub.com/Login</entry>
+	<entry key="prod_url">https://olddev.rppropertyhub.com</entry>
 	<entry key="devtest_url"></entry>	
 	
 <!-- 	<entry key="stage_admin_url">https://stage.rppropertyhub.com/n/Admin-Console/myrp-872</entry> -->
@@ -25,6 +25,9 @@
 	<entry key="userUsername">q2t3st</entry>
 	<entry key="userPassword">1234567890plm</entry>
 	
+	<entry key="userUsername2">onetimetest001</entry>
+	<entry key="userEmail">jennifer.maglaque@twistresources.com</entry>
+	
 	<entry key="userOEVPPvalue">550000</entry>
 	
 	<entry key="cartCountNumber">1</entry>
@@ -33,6 +36,12 @@
 	<entry key="customerLName">Qatester</entry>
 	<entry key="customerContact">1234567890</entry>
 	<entry key="customerEmail">twistqatest@gmail.com</entry>
+	
+	<entry key="passOneNumber">Test!ng</entry>	
+	<entry key="passLowerCase">TEST!NG123</entry>
+	<entry key="passUpperCase">test!ng123</entry>
+	<entry key="passSpecial">Testing123</entry>
+	<entry key="oneTimePass">Test!ng123</entry>
 	
 	<entry key="datePickerMonth">Jan</entry>
 	<entry key="datePickerYear">2013</entry>

@@ -31,6 +31,12 @@ public class UserHubLoginUtil extends FunctionReference {
 			takeScreenshot();
 			resultcount++;
 		}
+		try {
+			Assert.assertEquals("Enter your property address or street name here.", getValue(xpath(userPropertySearch)));
+		} catch (AssertionError e) {
+			takeScreenshot();
+			resultcount++;
+		}
 		
 		if (resultcount != 0) {
 			Assert.fail();

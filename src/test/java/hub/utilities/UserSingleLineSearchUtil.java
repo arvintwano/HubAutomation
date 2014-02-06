@@ -5,13 +5,23 @@ import hub.library.FunctionReference;
 
 public class UserSingleLineSearchUtil extends FunctionReference{
 					
-		public void testUserSingleLineSearch(String propertyAddress) throws Exception {
+	public void testUserSingleLineSearch(String propertyAddress) throws Exception {
 
-			waitForElementPresent(xpath(userPropertySearch));
-			type(xpath(userPropertySearch), propertyAddress);		
-			click(xpath(userSearchButton));
+		waitForElementPresent(xpath(userPropertySearch));
+		type(xpath(userPropertySearch), propertyAddress);		
+		click(xpath(userSearchButton));
 
 	}
+	
+	public void smokeCFA(String propertyAddress) throws Exception {
+
+		waitForElementPresent(xpath(userPropertySearch));
+		type(xpath(userPropertySearch), propertyAddress);		
+		click(xpath(userSearchButton));
+
+	}
+
+
 
 
 }

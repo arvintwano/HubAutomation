@@ -142,7 +142,13 @@ public class ObjectReference {
     public static String userRetroCheckAvailability = "(//input[@id='checkAvailability'])[2]";
     public static String errorRetroContainer ="//span[@id='checkAvailabilityError']";
     public static String errorRetroValuationDate = "//span[@colspan='4']";
-
+    
+    
+    //Channels
+    public static String cbaLender = "https://stage-cbalender.rppropertyhub.com";
+    public static String aussieSelect = "https://stage-aussieselect.rppropertyhub.com";
+    public static String bankMelbourne = "https://stage-bankmelbourne.rppropertyhub.com";
+    
 }
 
 

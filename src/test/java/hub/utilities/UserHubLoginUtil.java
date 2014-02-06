@@ -117,6 +117,27 @@ public class UserHubLoginUtil extends FunctionReference {
 		}
 	}
 	
+	public void smokeLogin (String[] input) throws InterruptedException, IOException {
+		resultcount = 0;
+		
+		driver.navigate().to(input[1]);		
+		
+		waitForElementPresent(xpath(userLoginUsername));
+		isElementPresent(xpath(userLoginUsername));
+		isElementPresent(xpath(userLoginPassword));
+		isElementPresent(xpath(userLoginButton));
+		
+		String username = "";
+		String password = "";
+		testCase = "RP Property Hub Login: " + input[0];
+		username = input[2];
+		password = input[3];
+
+		type(xpath(userLoginUsername), username);
+		type(xpath(userLoginPassword), password);
+		click(xpath(userLoginButton));
+	}
+	
 	private void hubLoginSetup () throws InterruptedException, IOException {
 		resultcount = 0;
 		waitForElementPresent(xpath(userLoginUsername));

@@ -127,8 +127,6 @@ public class UserResetPasswordUtil extends FunctionReference{
 		
 		
 		public void testResetPasswordLink() throws Exception{			
-//			driver.navigate().to(userResetPasswordLink);			
-//			Assert.assertEquals("RP Property Hub - Reset Password", driver.getTitle());
 			
 			waitForElementPresent(xpath(userResetPasswordNewPass));
 			try {

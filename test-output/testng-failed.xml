@@ -7,7 +7,7 @@
         <methods>
           <include name="Startup"/>
           <include name="teardown"/>
-          <include name="testSmokeTest" invocation-numbers="0 1"/>
+          <include name="testSmokeTest" invocation-numbers="1 2 3 4 5 6"/>
           <include name="reinitializeBrowser"/>
         </methods>
       </class> <!-- hub.test.SmokeTest -->

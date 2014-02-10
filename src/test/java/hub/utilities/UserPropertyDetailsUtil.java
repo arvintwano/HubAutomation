@@ -28,10 +28,12 @@ public class UserPropertyDetailsUtil extends FunctionReference{
 	    if (isElementPresent(xpath(userPendingTransactionMessage))){
 	    	System.out.println("User has Pending transactions!");
 	        click(By.linkText("Start a new transaction for this property"));
+	        Thread.sleep(3000);
 	    }
 	}
 	
 	public void proceedProductSelection() throws Exception {
-		click(xpath(userProceedToProductSelection));					
+		click(xpath(userProceedToProductSelection));
+		Thread.sleep(3000);
 	}
 }

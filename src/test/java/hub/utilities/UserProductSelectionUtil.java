@@ -6,6 +6,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 
 import hub.library.FunctionReference;
+import hub.library.ObjectReference;
 import hub.library.ReadXmlData;
 
 import org.openqa.selenium.By;
@@ -13,6 +14,17 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class UserProductSelectionUtil extends FunctionReference{
+	
+	private String[] input = null;
+	private String testCase = "";
+
+	
+	public UserProductSelectionUtil(String[] i) {
+		input = i;
+	}
+	
+	public UserProductSelectionUtil() {
+	}
 	
 	public void testUserNavigateToTab() throws Exception {
 		waitForElementPresent(xpath(userProductSelectionList));		
@@ -30,6 +42,7 @@ public class UserProductSelectionUtil extends FunctionReference{
 		try {
 			Assert.assertEquals(retroAvmTabName, getText(xpath(userRetroReportsTabLink)));
 		} catch (AssertionError e) {
+			fail(testCase);
 			takeScreenshot();
 			resultcount++;
 		}
@@ -93,6 +106,46 @@ public class UserProductSelectionUtil extends FunctionReference{
 		}
 
 
+	}
+	
+	public void smokeProductTab() throws Exception{
+		waitForElementPresent(xpath(productTabsMenu));	
+		String productTab = input[11];
+		
+		if (isElementPresent(xpath(userOriginatorDetails))) {
+		click(xpath(productTab));
+		}
+		
+		Thread.sleep(3000);
+	}
+	
+
+	public void smokeNotAvailableProduct() throws Exception {
+		Thread.sleep(3000);
+		waitForElementPresent(xpath(input[14]));
+			try {
+				Assert.assertFalse(isElementPresent(xpath(input[14])));
+			} catch (AssertionError e) {
+				fail(testCase);
+				takeScreenshot();
+				resultcount++;
+			}
+		}
+		
+	
+	
+	public void smokeAddProduct() throws Exception {
+		Thread.sleep(3000);
+		String addToCart = input[14];
+		waitForElementPresent(xpath(addToCart));
+		try {
+			Assert.assertEquals("Add to cart", getText(xpath(input[14])));
+		} catch (AssertionError e) {
+			fail(testCase);
+			takeScreenshot();
+			resultcount++;
+		}
+		click(xpath(addToCart));
 	}
 	
 	public void testAddToCart() throws Exception {

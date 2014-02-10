@@ -1,7 +1,8 @@
 package hub.library;
 
 public class ObjectReference {
-    ReadXmlData rxml = new ReadXmlData();
+
+	ReadXmlData rxml = new ReadXmlData();
    
     public String prod_url = rxml.data("prod_url");
     public String local_url = rxml.data("local_url");
@@ -78,6 +79,21 @@ public class ObjectReference {
     public static String userSearchButton = "//input[@id='hubSearchButton']";
     public static String userPropertyDetails = "//div[@id='propdetails']";
     
+    //CFA
+    public static String userCFAButton = "//input[@src='/myrp/images/hub/hub_cantFindAddress.png']";
+    public static String userCFAUnitNumber = "//input[@id='hubSearchAddress_unitNumber']";
+    public static String userCFAStreetNumber = "//input[@id='hubSearchAddress_streetNumber']";
+    public static String userCFALotNumber = "//input[@id='hubSearchAddress_lotNumber']";
+    public static String userCFAStreetName = "//input[@id='hubSearchAddress_streetName']";
+    public static String userCFAStreetType = "//input[@id='hubSearchAddress_street_Type']";
+    public static String userCFAStatePostcode = "//input[@id='hubSearchAddress_suburbStatePostcode']";
+    public static String userCFABackSearch = "(//div[@id='clearAllIcon'])[1]";
+    public static String userCFAClear = "(//div[@id='clearAllIcon'])[2]";
+    public static String userCFAConfirm = "//div[@id='proceedBtn']";
+    public static String userCFASuggestion = "//div[@class='hubResults cantfindAddListContainer']";
+    public static String userCFASuburbList = "(//div[@class='acResults'])[2]";
+    
+    
     //Pending Transactions
     public static String userPendingTransactionMessage ="//div[@id='divContainer']";
     
@@ -86,12 +102,17 @@ public class ObjectReference {
 
     //originator
     public static String userOriginatorDetails = "//div[@id='div_questionnaire']";
-    public static String userOEVPP = "//input[@name='2']";
+    public static String userOEVPP = "//input[@id='2']";
     public static String userNoneApply ="//input[@id='26']";
     public static String userAVMAck ="//input[@id='6']";
     public static String userOriginatorToProductSelection = "(//a[@class='hubTextlink'])[6]";
+    public static String userOriginatorProceed = "(//a[@class='hubTextlink'])[8]";
     
     //Product tabs
+    public static String productTabsMenu = "//div[@id='containerTab']";
+    public static String tabReports = "//a[@id='linkReports']";
+    public static String tabValuations = "//a[@id='linkValuations']";
+     
     public static String userProductTab = "//input[@id='linkResidential_Valuations']";
     public static String tabResidentialValuation = "//input[@id='linkResidential_Valuations']";
     public static String tabRetroReports = "//div[@id='linkRetro_Reports']";
@@ -99,6 +120,11 @@ public class ObjectReference {
     public static String tabRuralValuations ="//div[@id='linkRural_Valuations']";
     public static String userValuationsTab = "//div[@id('tabValuations')]";
     public static String userRetroReportsTab = "//div[@id='tabRetro_Reports']";
+    
+    //Products
+    public static String productLenderEmpowerment = "//div[@id='tabReports']/table/tbody/tr/td/div/div/ul/li[2]/div/input[@id='purchaseButton']";
+    public static String productLenderAVM = "//div[@id='tabValuations']//input[@id='purchaseButton']";
+    public static String productShorFormVal = "//div[@id='tabValuations']/table/tbody/tr[2]/td/div/div/ul/li[2]/div/input[@id='purchaseButton']";
 
     //Product selection
     public static String userAddToCart = "(//input[@id='purchaseButton'])[1]";

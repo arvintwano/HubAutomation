@@ -444,6 +444,14 @@ public class FunctionReference extends Results {
         }
         return value;
     }
+    
+    public String getChecked(By by) {
+        String value = "";
+        if (isElementPresent(by)) {
+            value = driver.findElement(by).getAttribute("checked");
+        }
+        return value;
+    }
 
   
     public void rightClick(By by) {

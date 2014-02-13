@@ -3,21 +3,35 @@ package hub.utilities;
 import hub.library.FunctionReference;
 import hub.library.ReadXmlData;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.openqa.selenium.By.*;
+import static org.testng.AssertJUnit.assertEquals;
 
 public class UserPaymentDetailsUtil extends FunctionReference{
+	private String[] input = null;
+	private String testCase = "";
+
+	
+	public UserPaymentDetailsUtil(String[] i) {
+		input = i;
+	}
+	
+	public UserPaymentDetailsUtil() {
+	}
 
 	public void testUserPaymentDetails() throws Exception {	
 		waitForElementPresent(xpath(userPaymentDetailsForm));
 	}
 	
 	public void testUserPaymentDetailsRemove() throws Exception {	
-		
 		click(xpath(userPaymentDetailsRemove));
+	}
 	
+	public void testUserProceedToPayment() throws Exception {	
+		click(By.linkText(userProceedToPaymentDetails));
 	}
 
 	public void testPaymentCartCountPopup() throws Exception {
@@ -58,6 +72,53 @@ public class UserPaymentDetailsUtil extends FunctionReference{
 		}
 		
 		click(xpath(userPaymentDetailsRemoveOk));
+	}
+
+	public void smokePaymentForm() throws Exception{
+		
+		resultcount = 0;	
+		testCase = "RP Property Hub Payment Details: " + input[0];
+				
+		waitForElementPresent(xpath(userPaymentDetailsForm));
+		
+		try {
+			Assert.assertEquals(input[20], getText(xpath(userPaymentItem)));
+		} catch (AssertionError e) {
+			fail("Item on Cart");
+			takeScreenshot();
+			resultcount++;
+		}
+		
+	    if(isElementPresent(xpath(userPaymentTermsConditions))){
+			click(xpath(userPaymentTermsConditions));	
+			}
+		
+		if(isElementPresent(xpath(userPaymentPassword))){
+			type(xpath(userPaymentPassword), input[21]);	
+			}
+		
+		if(isElementPresent(xpath(userPaymentBroker))){
+			type(xpath(userPaymentBroker), input[22]);	
+			}
+		
+		if(isElementPresent(xpath(userPaymentCreditName))){
+			type(xpath(userPaymentCreditName), input[23]);	
+			}
+		if(isElementPresent(xpath(userPaymentCreditEmail))){
+			type(xpath(userPaymentCreditEmail), input[24]);	
+			}
+		if(isElementPresent(xpath(userPaymentCreditNumber))){
+			type(xpath(userPaymentCreditNumber), input[25]);	
+			}
+		if(isElementPresent(xpath(userPaymentCreditSecurity))){
+			type(xpath(userPaymentCreditSecurity), input[26]);	
+			}
+		
+		if (resultcount != 0) {
+			fail(testCase);
+		} else {
+			pass(testCase);
+		}
 	}
 	
 }

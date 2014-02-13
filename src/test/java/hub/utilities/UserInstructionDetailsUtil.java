@@ -10,18 +10,21 @@ import org.testng.annotations.Test;
 import static org.openqa.selenium.By.*;
 
 public class UserInstructionDetailsUtil extends FunctionReference{
+	
+	private String[] input = null;
+	private String testCase = "";
+
+	
+	public UserInstructionDetailsUtil(String[] i) {
+		input = i;
+	}
+	
+	public UserInstructionDetailsUtil() {
+	}
 
 	@Test(description = "Proceed to instruction details")
-	public void testProceedInstructionDetails() throws Exception {
-		pass("Test Report: Proceed to instruction details " + browser + " browser");
-		
-		//click(By.linkText(userProceedToInstructionDetails));
-				
-	    if (resultcount != 0) {
-			Assert.fail();
-	    } else {
-	    	pass("PASSED");
-	    }
+	public void testProceedInstructionDetails() throws Exception {	
+		click(By.linkText(userProceedToInstructionDetails));				
 	}
 	
 	public void testInstructionDetailsForm() throws Exception {
@@ -46,17 +49,63 @@ public class UserInstructionDetailsUtil extends FunctionReference{
 		click(xpath(userSameAsCustomer));
 	}
 	
-	public void testCartCountCheck() throws Exception{
+	public void smokeInstructionDetailsForm() throws Exception {
+		
+		resultcount = 0;	
+		testCase = "RP Property Hub Instruction Details: " + input[0];
+
+		waitForElementPresent(xpath(userInstructionDetails));
+		
 		try {
-			Assert.assertEquals("(1)", getText(xpath(userCart)));
+			Assert.assertTrue(isElementPresent(xpath(userInstructionDetails)));
 		} catch (AssertionError e) {
+			fail(testCase);
 			takeScreenshot();
 			resultcount++;
 		}
 		
-	    if (resultcount != 0) {
-			Assert.fail();
-	    }
+		if(isElementPresent(xpath(userCustomerFName))){
+		type(xpath(userCustomerFName), input[16]);	
+		}
+		if(isElementPresent(xpath(userCustomerLName))){
+		type(xpath(userCustomerLName), input[17]);	
+		}
+		if(isElementPresent(xpath(userCustomerContact))){
+		type(xpath(userCustomerContact), input[18]);	
+		}
+		if(isElementPresent(xpath(userCustomerEmail))){
+		type(xpath(userCustomerEmail), input[19]);	
+		}
+		if(isElementPresent(xpath(userSameAsCustomer))){
+		waitForElementPresent(xpath(userSameAsCustomer));
+		click(xpath(userSameAsCustomer));
+		}
+		
+		if (resultcount != 0) {
+			fail(testCase);
+		} else {
+			pass(testCase);
+		}
+	}
+	
+	public void testCartCountCheck() throws Exception{
+		Thread.sleep(1000);
+		resultcount = 0;	
+		testCase = "RP Property Hub My Cart count: " + input[0];
+			
+		try {
+			Assert.assertEquals("(1)", getText(xpath(userCart)));
+		} catch (AssertionError e) {
+			fail("Cart count");
+			takeScreenshot();
+			resultcount++;
+		}
+		
+		if (resultcount != 0) {
+			fail(testCase);
+		} else {
+			pass(testCase);
+		}
 	}
 	
 	public void testProductSelectionNav() throws Exception {

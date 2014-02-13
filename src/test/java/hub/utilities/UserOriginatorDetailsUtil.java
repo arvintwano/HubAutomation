@@ -53,19 +53,25 @@ public class UserOriginatorDetailsUtil extends FunctionReference{
 		waitForElementPresent(xpath(userProductSelectionListOverview));	
 	}
 	
-	public void smokeOriginator() throws Exception{
+	public void smokeOriginator() throws Exception{	
+		resultcount = 0;	
+		testCase = "RP Property Hub Originator details: " + input[0];
+				
 		waitForElementPresent(xpath(userOriginatorDetails));
 		try {
 			Assert.assertTrue(isElementPresent(xpath(userOriginatorDetails)));
 		} catch (AssertionError e) {
+			fail("Originator Details modal");
 			takeScreenshot();
 			resultcount++;
 		}
-		
-		waitForElementPresent(xpath(userOEVPP));
 		String oevpp = input[13];
 		
-		
+		if(isElementPresent(xpath(userOEVPP))) {
+		waitForElementPresent(xpath(userOEVPP));	
+		type(xpath(userOEVPP), oevpp);
+		}
+				
 		if(isElementPresent(xpath(userNoneApply))) {
 			waitForElementPresent(xpath(userNoneApply));
 			click(xpath(userNoneApply));
@@ -73,11 +79,22 @@ public class UserOriginatorDetailsUtil extends FunctionReference{
 		if(isElementPresent(xpath(userAVMAck))) {
 			waitForElementPresent(xpath(userAVMAck));
 			click(xpath(userAVMAck));
-		}	
-		type(xpath(userOEVPP), oevpp);
+		}		
 		
-		Thread.sleep(2000);
+		if (resultcount != 0) {
+			fail(testCase);
+		} else {
+			pass(testCase);
+		}
 		
+		Thread.sleep(6000);		
+	}
+	
+	public void smokeOriginatorProceed() throws Exception {
+		waitForElementPresent(xpath(userOriginatorDetails));
+		click(xpath(userOriginatorProceed));
+		waitForElementPresent(xpath(userProductSelectionList));	
+		waitForElementPresent(xpath(userProductSelectionListOverview));	
 	}
 
 }

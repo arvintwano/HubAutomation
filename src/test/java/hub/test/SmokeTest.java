@@ -4,7 +4,11 @@ import hub.library.ReadXlsData;
 import hub.library.TestInitReference;
 import hub.utilities.UserHubLoginUtil;
 import hub.utilities.UserInstructionDetailsUtil;
+import hub.utilities.UserMyAccountUtil;
+import hub.utilities.UserMyTransactionsUtil;
+import hub.utilities.UserOrderConfirmationUtil;
 import hub.utilities.UserOriginatorDetailsUtil;
+import hub.utilities.UserPaymentDetailsUtil;
 import hub.utilities.UserProductSelectionUtil;
 import hub.utilities.UserPropertyDetailsUtil;
 import hub.utilities.UserSingleLineSearchUtil;
@@ -16,12 +20,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.openqa.selenium.By.xpath;
-
 public class SmokeTest extends TestInitReference {
 
-	private static final boolean False = false;
-	private static final String[] String = null;
 	String testCase = "Smoke Test";
 	
 	@Test(description="Smoke Test", dataProvider = "Data-Provider-Function")
@@ -33,15 +33,23 @@ public class SmokeTest extends TestInitReference {
 		try {
 			UserHubLoginUtil uhlu = new UserHubLoginUtil(input);			
 			UserSingleLineSearchUtil islsu = new UserSingleLineSearchUtil(input);
+			UserPropertyDetailsUtil updu = new UserPropertyDetailsUtil(input);
+			UserProductSelectionUtil upsu = new UserProductSelectionUtil(input);
 			
 			switch (input[4].toUpperCase()) {
 			case "CFA":
 				uhlu.smokeLogin();
 				islsu.smokeCFA();
+				updu.startNewTransaction();
+				updu.proceedProductSelection();						
+				upsu.smokeProductTab();
 		        break;
 			case "SLAS":
 				uhlu.smokeLogin();
 				islsu.smokeSLAS();
+				updu.startNewTransaction();
+				updu.proceedProductSelection();						
+				upsu.smokeProductTab();
 		        break;
 			case "DEEP":
 				uhlu.smokeDeepLink();				
@@ -49,29 +57,39 @@ public class SmokeTest extends TestInitReference {
 				fail(testcase);
 		        Assert.fail("Invalid Test Data");
 		        break;
-			}
-			
-			UserPropertyDetailsUtil updu = new UserPropertyDetailsUtil();
-			updu.startNewTransaction();
-			updu.proceedProductSelection();
-			
-			UserProductSelectionUtil upsu = new UserProductSelectionUtil(input);			
-			upsu.smokeProductTab();
-							
+			}									
 			
 			switch (input[15].toUpperCase()) {
 			case "AVAILABLE":
 				if (input[12].equalsIgnoreCase("Originator")) {
 					UserOriginatorDetailsUtil uodu = new UserOriginatorDetailsUtil(input);
 					uodu.smokeOriginator();
-					uodu.testOriginatorToProductSelection();
+					uodu.smokeOriginatorProceed();
 				}
 				upsu.smokeAddProduct();
-				UserInstructionDetailsUtil uidu = new UserInstructionDetailsUtil();
+				UserInstructionDetailsUtil uidu = new UserInstructionDetailsUtil(input);
 				uidu.testCartCountCheck();
+				uidu.testProceedInstructionDetails();
+				uidu.smokeInstructionDetailsForm();
+				UserPaymentDetailsUtil upd = new UserPaymentDetailsUtil(input);
+				upd.testUserProceedToPayment();
+				upd.smokePaymentForm();
+				UserOrderConfirmationUtil uocu = new UserOrderConfirmationUtil(input);
+				uocu.testConfirmPayment();				
+				uocu.testMortgageValuation();
+				uocu.smokeOrderConfirmationDetails();
+				uocu.testStartNewOrder();
+				UserMyAccountUtil uma = new UserMyAccountUtil(input);
+				uma.testMyAccountNavigation();
+				UserMyTransactionsUtil umtu = new UserMyTransactionsUtil(input);
+				umtu.testMyTransactionsNavigation();
+				uhlu.testLogout();
 		        break;
 			case "NOT AVAILABLE":
 				upsu.smokeNotAvailableProduct();
+		        break;
+			case "DEEP":
+				upsu.testDeepLinkProductSelection();
 		        break;
 			default:
 				fail(testcase);

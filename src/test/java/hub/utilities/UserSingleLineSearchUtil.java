@@ -26,15 +26,40 @@ public class UserSingleLineSearchUtil extends FunctionReference{
 	}
 	
 	public void smokeSLAS() throws Exception {
-
+		resultcount = 0;	
+		testCase = "RP Property Hub Single Line Address Search: " + input[0];
+				
 		waitForElementPresent(xpath(userPropertySearch));
+		try {
+			Assert.assertTrue(isElementPresent(xpath(userPropertySearch)));
+		} catch (AssertionError e) {
+			fail("SLAS field");
+			takeScreenshot();
+			resultcount++;
+		}
+		
+		try {
+			Assert.assertEquals("Enter your property address or street name here.", getValue(xpath(userPropertySearch)));
+		} catch (AssertionError e) {
+			fail("SLAS placeholder text");
+			takeScreenshot();
+			resultcount++;
+		}
+		
 		type(xpath(userPropertySearch), input[10]);		
 		click(xpath(userSearchButton));
+		
+		if (resultcount != 0) {
+				fail(testCase);
+			} else {
+				pass(testCase);
+			}
 		Thread.sleep(3000);
-
-	}
+}
 	
 	public void smokeCFA() throws Exception {
+		resultcount = 0;	
+		testCase = "RP Property Hub Can't Find Address: " + input[0];
 
 		waitForElementPresent(xpath(userCFAButton));		
 		click(xpath(userCFAButton));
@@ -43,63 +68,63 @@ public class UserSingleLineSearchUtil extends FunctionReference{
 		try{
 			Assert.assertTrue(isElementPresent(xpath(userCFAUnitNumber)));
 		} catch (AssertionError e) {
-			fail(testCase);
+			fail("Unit Number");
 			takeScreenshot();
 			resultcount++;
 		}
 		try{
 			Assert.assertTrue(isElementPresent(xpath(userCFAStreetNumber)));
 		} catch (AssertionError e) {
-			fail(testCase);
+			fail("Street Number");
 			takeScreenshot();
 			resultcount++;
 		}
 		try{
 			Assert.assertTrue(isElementPresent(xpath(userCFALotNumber)));
 		} catch (AssertionError e) {
-			fail(testCase);
+			fail("Lot Number");
 			takeScreenshot();
 			resultcount++;
 		}
 		try{
 			Assert.assertTrue(isElementPresent(xpath(userCFAStreetName)));
 		} catch (AssertionError e) {
-			fail(testCase);
+			fail("Street Name");
 			takeScreenshot();
 			resultcount++;
 		}
 		try{
 			Assert.assertTrue(isElementPresent(xpath(userCFAStreetType)));
 		} catch (AssertionError e) {
-			fail(testCase);
+			fail("Street Type");
 			takeScreenshot();
 			resultcount++;
 		}
 		try{
 			Assert.assertTrue(isElementPresent(xpath(userCFAStatePostcode)));
 		} catch (AssertionError e) {
-			fail(testCase);
+			fail("State/Postcode");
 			takeScreenshot();
 			resultcount++;
 		}
 		try{
 			Assert.assertTrue(isElementPresent(xpath(userCFABackSearch)));
 		} catch (AssertionError e) {
-			fail(testCase);
+			fail("Back to search");
 			takeScreenshot();
 			resultcount++;
 		}
 		try{
 			Assert.assertTrue(isElementPresent(xpath(userCFAClear)));
 		} catch (AssertionError e) {
-			fail(testCase);
+			fail("Clear button");
 			takeScreenshot();
 			resultcount++;
 		}
 		try{
 			Assert.assertTrue(isElementPresent(xpath(userCFAConfirm)));
 		} catch (AssertionError e) {
-			fail(testCase);
+			fail("Confirm button");
 			takeScreenshot();
 			resultcount++;
 		}
@@ -112,12 +137,13 @@ public class UserSingleLineSearchUtil extends FunctionReference{
 		type(xpath(userCFAStatePostcode), input[10]);
 		
 		click(xpath(userCFAConfirm));
+		
+		if (resultcount != 0) {
+			fail(testCase);
+		} else {
+			pass(testCase);
+		}
 				
 		Thread.sleep(3000);
 	}
-
-	
-
-
-
 }

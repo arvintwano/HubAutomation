@@ -109,6 +109,7 @@ public class UserProductSelectionUtil extends FunctionReference{
 	}
 	
 	public void smokeProductTab() throws Exception{
+		
 		waitForElementPresent(xpath(productTabsMenu));	
 		String productTab = input[11];
 		
@@ -121,31 +122,52 @@ public class UserProductSelectionUtil extends FunctionReference{
 	
 
 	public void smokeNotAvailableProduct() throws Exception {
+		
 		Thread.sleep(3000);
+		
+		resultcount = 0;	
+		testCase = "RP Property Hub Product Not Available: " + input[0];
+		
 		waitForElementPresent(xpath(input[14]));
 			try {
 				Assert.assertFalse(isElementPresent(xpath(input[14])));
 			} catch (AssertionError e) {
-				fail(testCase);
+				fail("Purchase button");
 				takeScreenshot();
 				resultcount++;
+			}
+			if (resultcount != 0) {
+				fail(testCase);
+			} else {
+				pass(testCase);
 			}
 		}
 		
 	
 	
 	public void smokeAddProduct() throws Exception {
-		Thread.sleep(3000);
+		Thread.sleep(35000);
+		resultcount = 0;	
+		testCase = "RP Property Hub Add to cart: " + input[0];
+				
 		String addToCart = input[14];
 		waitForElementPresent(xpath(addToCart));
 		try {
-			Assert.assertEquals("Add to cart", getText(xpath(input[14])));
+			Assert.assertEquals("Add to cart", getValue(xpath(addToCart)));
 		} catch (AssertionError e) {
-			fail(testCase);
+			fail("Add to cart");
 			takeScreenshot();
 			resultcount++;
 		}
 		click(xpath(addToCart));
+		
+		if (resultcount != 0) {
+			fail(testCase);
+		} else {
+			pass(testCase);
+		}
+		
+		Thread.sleep(6000);
 	}
 	
 	public void testAddToCart() throws Exception {
@@ -154,6 +176,28 @@ public class UserProductSelectionUtil extends FunctionReference{
 	    if (resultcount != 0) {
 			Assert.fail();
 	    }
+	}
+	
+	public void testDeepLinkProductSelection() throws Exception {
+		
+		resultcount = 0;	
+		testCase = "RP Property Hub Deep Linking: " + input[0];
+				
+		waitForElementPresent(xpath("//div[@id='workspace']"));
+		
+		try {
+			Assert.assertEquals("RP Property Hub - Product Selection", driver.getTitle());
+		} catch (AssertionError e) {
+			fail("Deep link Product Selection page");
+			takeScreenshot();
+			resultcount++;
+		}
+		
+		if (resultcount != 0) {
+			fail(testCase);
+		} else {
+			pass(testCase);
+		}
 	}
 
 }

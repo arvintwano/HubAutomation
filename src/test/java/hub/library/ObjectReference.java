@@ -32,9 +32,27 @@ public class ObjectReference {
     public static String userLoginPassword = "//input[@id='password']";
     public static String userLoginButton = "//input[@id='subRegInd']";
     public static String hubLoginError = "//div[@id='hubLoginError']";
-    public static String userLogoutLink = "//input[@id='logoutLink']";
+    public static String userLogoutLink = "//a[@id='logoutLink']";
     public static String emptyErrorMessage = "Username or Password should not be empty.";
     public static String invalidErrorMessage = "Invalid Username and/or Password, please try again.";
+    
+    //User Login new
+    public static String registerButton = "(//input[@id='subRegInd'])[1]";
+    public static String loginButton = "(//input[@id='subRegInd'])[2]";
+    public static String mandatoryFields = "//div[@id=flashMessageContent']";
+    public static String mandatoryMessage = "Please complete all mandatory fields.";
+    public static String loginSecurityError = "//div[@id='flashMessageContent']/div";
+    public static String loginSecurityMessage = "You have attempted 3 times to login. Please click on Forgot My Password to reset your account's password.";
+        
+    //My Account 
+    public static String userMyAccount = "//li[@id='myAccount']/div/a";
+    public static String myAccountFN = "//input[@id='firstName']";
+    public static String myAccountLN = "//input[@id='lastName']";
+    public static String myAccountEmail = "//input[@id='userEmail']";
+    
+    //My Transactions
+    public static String userMyTransactions = "//li[@id='myTransactions']/div/a";
+    public static String userMyTransactionList = "//div[@class='TransactionList']";
     
     //Reset Password
     public static String oldForgotPassword = "//form[@id='hubForgotPassForm']";
@@ -106,7 +124,7 @@ public class ObjectReference {
     public static String userNoneApply ="//input[@id='26']";
     public static String userAVMAck ="//input[@id='6']";
     public static String userOriginatorToProductSelection = "(//a[@class='hubTextlink'])[6]";
-    public static String userOriginatorProceed = "(//a[@class='hubTextlink'])[8]";
+    public static String userOriginatorProceed = "(//table[@class='propertyDetailQuestionLink']//a)[2]";
     
     //Product tabs
     public static String productTabsMenu = "//div[@id='containerTab']";
@@ -153,10 +171,31 @@ public class ObjectReference {
     public static String userCartCountCancel = "//input[@id='cartCountRestrictionCancel']";
 
     // Payment Details
+    public static String userProceedToPaymentDetails = "Proceed to payment details";  
     public static String userPaymentDetailsForm = "//div[@id='paymentDetailForm']";
+    public static String userPaymentItem = "//td[@class='labelText hubHeaderBodyText']";
+    public static String userPaymentTermsConditions = "//input[@id='termsAndConditions']";
+    public static String userPaymentPassword = "//input[@id='accountPassword']";
+    public static String userPaymentBroker = "//input[@id='accountId']";
+    public static String userPaymentCreditName = "//input[@id='nameForTaxInvoice']";
+    public static String userPaymentCreditEmail = "//input[@id='emailForTaxInvoice']";
+    public static String userPaymentCreditNumber = "//input[@id='cardNumber']";
+    public static String userPaymentCreditSecurity = "//input[@id='securityCode']";
     public static String userPaymentDetailsRemove = "//input[@class='hubRemoveButton']";
     public static String userPaymentDetailsRemovePopup = "//div[@id='hubCboxLoadedContent']";
     public static String userPaymentDetailsRemoveOk = "//a[contains(text(),'OK')]";
+    
+    //Order Confirmation
+    public static String userConfirmPayment = "//img[@src='/myrp/images/hub/hub_confirm.png']"; 
+    public static String userOrderItem = "//td[@class='labelText']";
+    public static String userOrderDetailFN = "(//div[@class='wrap']/div/div[@class='hubHeaderBodyText'])[1]";
+    public static String userOrderDetailLN = "(//div[@class='wrap']/div/div[@class='hubHeaderBodyText'])[2]";
+    public static String userOrderDetailCN = "(//div[@class='wrap']/div/div[@class='hubHeaderBodyText'])[3]";
+    public static String userOrderDetailCA = "(//div[@class='wrap']/div/div[@class='hubHeaderBodyText'])[4]";
+    
+    //Mortgage Valuation Notification
+    public static String userMortgagePopup = "//table[@class='hubHeaderBodyText']//td[@align='center']";
+    public static String userMortgagePopupOkBtn = "(//a[@class='hubButtonText'])[6]";
 
     //RetroVal
     public static String userRetroValuationDate = "(//input[@id='retroDate_108'])";

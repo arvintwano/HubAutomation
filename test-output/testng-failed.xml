@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="hub.test.UserLoginSecurityTest">
+      <class name="hub.test.AdminBaseProductAddNewTest">
         <methods>
           <include name="Startup"/>
-          <include name="testSmokeTest"/>
           <include name="teardown"/>
+          <include name="testBaseProductAddNew"/>
         </methods>
-      </class> <!-- hub.test.UserLoginSecurityTest -->
+      </class> <!-- hub.test.AdminBaseProductAddNewTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -13,7 +13,6 @@ public class AdminLoginUtil extends FunctionReference{
 	String adminUsername = rxml.data("adminUsername");
 	String adminPassword = rxml.data("adminPassword");
 	
-	@Test(description = "Admin Console Login")
 	public void testAdminLogin() throws Exception {
 		if (isElementPresent(xpath(adminLinkLogout))){
 			
@@ -46,8 +45,47 @@ public class AdminLoginUtil extends FunctionReference{
 		    } else {
 		    	pass("PASSED");
 		    }
+		}
 		
 	}
+		
+	public void adminLogin() throws Exception {
+		resultcount = 0;	
+		testCase = "Admin Console Successful Login";
+		
+		waitForElementPresent(xpath(adminLoginUsername));			
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminLoginUsername)));
+		} catch (AssertionError e) {
+			fail("Password" + " is not present");
+			takeScreenshot();
+			resultcount++;
+		}
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminLoginPassword)));
+		} catch (AssertionError e) {
+			fail("Password" + " is not present");
+			takeScreenshot();
+			resultcount++;
+		}
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminLoginButton)));
+		} catch (AssertionError e) {
+			fail("Password" + " is not present");
+			takeScreenshot();
+			resultcount++;
+		}
+		
+		type(xpath(adminLoginUsername), adminUsername);
+		type(xpath(adminLoginPassword), adminPassword);
+		click(xpath(adminLoginButton));
+		waitForElementPresent(xpath(adminLinkLogout));
+		
+		if (resultcount != 0) {
+			fail(testCase);
+		} else {
+			pass(testCase);
+		}
 	}
 
 }

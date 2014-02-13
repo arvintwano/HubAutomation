@@ -7,26 +7,6 @@ public class ObjectReference {
     public String prod_url = rxml.data("prod_url");
     public String local_url = rxml.data("local_url");
     
-    
-    //Admin Login
-    public static String adminLoginUsername = "//input[@id='hubAdminLoginUsername']";
-    public static String adminLoginPassword = "//input[@id='hubAdminLoginPassword']";
-    public static String adminLoginButton = "//input[@id='hubAdminLoginBtn']";
-    public static String adminLinkLogout = "//a[@onclick='HubAdminLogout.logout();']";
-    
-    //Admin Channel - Details
-    public static String adminChannelTable = "//div[@id='baseProductGroupForm']";
-    public static String adminChannelHeader = "//label[@class='mainLabel']";
-    public static String adminChannelEdit = "//a[contains(@href, '/n/Channel-Details/myrp-783?channelId=18')]"; //bglChannelId20
-    
-    //Admin Channel - Cart and Payment
-    public static String adminChannelCartAndPayment = "//a[@href='/n/Cart-and-Payment/myrp-786?channelId=18']";
-    public static String adminChannelOrderConfirmation = "(//label[@class='mainLabel'])[1]"; 
-    public static String adminCartCountCheckbox = "//input[@id='isActiveCartCountRestriction']";
-    public static String adminCartCountValue = "//input[@id='isActiveCartCountRestrictionValue']";
-    public static String adminCartCountNumber = "//input[@id='cartCountRestrictionNumber']";  
-    public static String adminButtonSave = "//input[@value='Save']"; 
-    
     //User login
     public static String userLoginUsername = "//input[@id='userName']";
     public static String userLoginPassword = "//input[@id='password']";
@@ -213,6 +193,49 @@ public class ObjectReference {
     public static String cbaLender = "https://stage-cbalender.rppropertyhub.com";
     public static String aussieSelect = "https://stage-aussieselect.rppropertyhub.com";
     public static String bankMelbourne = "https://stage-bankmelbourne.rppropertyhub.com";
+    
+    
+    
+    //Admin Login
+    public static String adminLoginUsername = "//input[@id='hubAdminLoginUsername']";
+    public static String adminLoginPassword = "//input[@id='hubAdminLoginPassword']";
+    public static String adminLoginButton = "//input[@id='hubAdminLoginBtn']";
+    public static String adminLinkLogout = "//a[@onclick='HubAdminLogout.logout();']";
+    
+    //Admin Channel - Details
+    public static String adminChannelTable = "//div[@id='baseProductGroupForm']";
+    public static String adminChannelHeader = "//label[@class='mainLabel']";
+    public static String adminChannelEdit = "//a[contains(@href, '/n/Channel-Details/myrp-783?channelId=18')]"; //bglChannelId20
+    
+    //Admin Channel - Cart and Payment
+    public static String adminChannelCartAndPayment = "//a[@href='/n/Cart-and-Payment/myrp-786?channelId=18']";
+    public static String adminChannelOrderConfirmation = "(//label[@class='mainLabel'])[1]"; 
+    public static String adminCartCountCheckbox = "//input[@id='isActiveCartCountRestriction']";
+    public static String adminCartCountValue = "//input[@id='isActiveCartCountRestrictionValue']";
+    public static String adminCartCountNumber = "//input[@id='cartCountRestrictionNumber']";  
+    public static String adminButtonSave = "//input[@value='Save']"; 
+      
+    //Admin menu
+    public static String  adminHome= "(//span[@class='parent'])[1]";
+    public static String  adminProducts = "(//span[@class='parent'])[2]";
+    public static String  adminChannels = "(//span[@class='parent'])[3]";
+    public static String  adminUsers = "(//span[@class='parent'])[4]";
+    public static String  adminUtilities = "(//span[@class='parent'])[5]";
+    
+    //Admin Products - Base Products
+    public static String adminBaseProductLink = "//a[contains(@href, 'n/Base-Products/')]";
+    public static String baseProductHeader = "//a[text()='BASE PRODUCTS']";
+    public static String baseProdAddNewLink = "//a[text()='Add New']";
+    public static String baseProdAddNewHeader = "//a[text()='ADD BASE PRODUCT']";
+
+    
+    
+    //Admin Products - Base Product Groups
+    public static String  adminBaseProductGroupsLink= "//a[contains(@href, 'n/Base-Products-Groups/')]";
+    
+    //Admin Products - Custom Products
+    public static String  adminCustomProductLink= "//a[contains(@href, 'n/Custom-Products/')]";
+    
     
 }
 

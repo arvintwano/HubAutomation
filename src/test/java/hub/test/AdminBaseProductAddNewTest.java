@@ -7,15 +7,13 @@ import hub.utilities.AdminLoginUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class AdminBaseProductListTest extends TestInitReference{
+public class AdminBaseProductAddNewTest extends TestInitReference{
 
-	String testCase = "Admin Base Product List";
+	String testCase = "Admin Base Product Add New";
 	
-	@Test(description="Admin Base Product List")
-	public void testBaseProductList() {
+	@Test(description="Admin Base Product Add New")
+	public void testBaseProductAddNew() {
 		String testcase = "Testing Testcase - ";
-
-		
 		
 		try {
 			driver.navigate().to("https://stage.rppropertyhub.com/n/Admin-Console/myrp-872");
@@ -23,6 +21,7 @@ public class AdminBaseProductListTest extends TestInitReference{
 			alu.adminLogin();
 			AdminBaseProductUtil abpu = new AdminBaseProductUtil();
 			abpu.testBaseProductNavigation();
+			abpu.testBaseProductAddNewLink();
 		} catch (Exception e) {
 			fail(testcase);
 			e.printStackTrace();

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="52683" started-at="2014-02-13T07:42:13Z" finished-at="2014-02-13T07:43:06Z">
+  <suite name="Default suite" duration-ms="50719" started-at="2014-02-13T09:49:34Z" finished-at="2014-02-13T09:50:25Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="52683" started-at="2014-02-13T07:42:13Z" finished-at="2014-02-13T07:43:06Z">
-      <class name="hub.test.UserLoginSecurityTest">
-        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.UserLoginSecurityTest@3aa6088]" name="Startup" is-config="true" duration-ms="46934" started-at="2014-02-13T15:42:13Z" finished-at="2014-02-13T15:43:00Z">
+    <test name="Default test" duration-ms="50719" started-at="2014-02-13T09:49:34Z" finished-at="2014-02-13T09:50:25Z">
+      <class name="hub.test.AdminBaseProductAddNewTest">
+        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.AdminBaseProductAddNewTest@151d2dc5]" name="Startup" is-config="true" duration-ms="27023" started-at="2014-02-13T17:49:34Z" finished-at="2014-02-13T17:50:01Z">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,15 +16,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Startup -->
-        <test-method status="PASS" signature="testSmokeTest()[pri:0, instance:hub.test.UserLoginSecurityTest@3aa6088]" name="testSmokeTest" duration-ms="5629" started-at="2014-02-13T15:43:00Z" description="Login Security" finished-at="2014-02-13T15:43:06Z">
+        <test-method status="PASS" signature="testBaseProductAddNew()[pri:0, instance:hub.test.AdminBaseProductAddNewTest@151d2dc5]" name="testBaseProductAddNew" duration-ms="23565" started-at="2014-02-13T17:50:01Z" description="Admin Base Product Add New" finished-at="2014-02-13T17:50:25Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.UserLoginSecurityTest@3aa6088]" name="teardown" is-config="true" duration-ms="104" started-at="2014-02-13T15:43:06Z" finished-at="2014-02-13T15:43:06Z">
+        </test-method> <!-- testBaseProductAddNew -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.AdminBaseProductAddNewTest@151d2dc5]" name="teardown" is-config="true" duration-ms="115" started-at="2014-02-13T17:50:25Z" finished-at="2014-02-13T17:50:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- hub.test.UserLoginSecurityTest -->
+      </class> <!-- hub.test.AdminBaseProductAddNewTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

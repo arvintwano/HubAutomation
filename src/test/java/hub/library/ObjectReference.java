@@ -23,12 +23,51 @@ public class ObjectReference {
     public static String mandatoryMessage = "Please complete all mandatory fields.";
     public static String loginSecurityError = "//div[@id='flashMessageContent']/div";
     public static String loginSecurityMessage = "You have attempted 3 times to login. Please click on Forgot My Password to reset your account's password.";
+    
+    
+    //Signup page
+    public static String registrationForm = "//form[@id='hubRegisForm']";
+    public static String signupCaptchaImg = "//img[@id='scImage']";
+    public static String signupCaptcha = "//input[@id='validationCode']";
+    public static String signupDone ="//input[@id='subRegInd']";
+    public static String signUpErrorFN = "//div[text()='First name field should not be empty.']";
+    public static String signUpErrorLN = "//div[text()='Last name field should not be empty.']";
+    public static String signUpErrorBranchId = "//div[text()='Branch ID field should not be empty.']";
+    public static String signUpErrorStaffId = "//div[text()='Staff ID/Broker ID field should not be empty.']";
+    public static String signUpErrorProfId = "//div[text()='Professional Industry Body ID field should not be empty.']";
+    public static String signUpErrorUserRole = "//div[text()='User role field should not be empty.']";
+    public static String signUpErrorEmail = "//div[text()='Email field should not be empty.']";
+    public static String signUpErrorConfirmEmail = "//div[text()='Confirm email field should not be empty.']";
+    public static String signUpErrorMobile = "//div[text()='Mobile number field should not be empty.']";
+    public static String signUpErrorPhone = "//div[text()='Phone number field should not be empty.']";
+    public static String signUpErrorUsername = "//div[text()='Username should not be empty.']";
+    public static String signUpErrorPassword = "//div[text()='Password field should not be empty.']";
+    public static String signUpErrorConfirmPass = "//div[text()='Confirm password field should not be empty.']";
+    public static String signUpErrorSecurityQuestion = "//div[text()='Security question field should not be empty.']";
+    public static String signUpErrorSecurityAnswer = "//div[text()='Security answer field should not be empty.']";
+    public static String signUpErrorCaptcha = "//div[text()='Validation code should not be empty.']";
+
         
     //My Account 
     public static String userMyAccount = "//li[@id='myAccount']/div/a";
     public static String myAccountFN = "//input[@id='firstName']";
     public static String myAccountLN = "//input[@id='lastName']";
+    public static String myAccountBranchId = "//input[@id='BranchID']";
+    public static String myAccountStaffId = "//input[@id='StaffIDBrokerID']";
+    public static String myAccountProfId = "//input[@id='ProfessionalIndustryBodyID']";
     public static String myAccountEmail = "//input[@id='userEmail']";
+    public static String myAccountConfirmEmail = "//input[@id='confirmUserEmail']";
+    public static String myAccountMobile = "//input[@id='mobileNumber']";
+    public static String myAccountPhone = "//input[@id='phoneNumber']";
+    public static String myAccountUsername = "//input[@id='userName']";
+    public static String myAccountPassword = "//input[@id='userPass']";
+    public static String myAccountConfirmPassword = "//input[@id='confirmUserPass']";
+    public static String myAccountSecurityQuestion = "//input[@id='securityQuestion']";
+    public static String myAccountSecurityAnswer = "//input[@id='securityAnswer']";
+    public static String myAccountUserRole = "//select[@id='userRole']";
+
+    
+    
     
     //My Transactions
     public static String userMyTransactions = "//li[@id='myTransactions']/div/a";
@@ -225,8 +264,71 @@ public class ObjectReference {
     //Admin Products - Base Products
     public static String adminBaseProductLink = "//a[contains(@href, 'n/Base-Products/')]";
     public static String baseProductHeader = "//a[text()='BASE PRODUCTS']";
+    public static String baseProductList = "//div[@id='adminBaseProductListContainer']";
+    
+    
+    
     public static String baseProdAddNewLink = "//a[text()='Add New']";
+    public static String baseProdCancelBtn = "(//div[@class='button-text'])[1]";
+    public static String baseProdSaveBtn = "//div[@class='button-text-save']";
+    public static String baseProdBackToListBtn = "(//div[@class='button-text'])[2]";
+    public static String baseProductErrorMessage = "//div[@id='errorMessage']";
+    public static String baseProdActivate = "//input[@id='isActivate']";
+    
     public static String baseProdAddNewHeader = "//a[text()='ADD BASE PRODUCT']";
+    public static String baseProdAddNewLabel = "//label[@id='base-product-mail-label']";
+    public static String baseProdNameFieldLabel = "//label[text()='* Name:']";
+    public static String baseProdDataGroupFieldLabel = "//label[text()='* Product Data Group:']";
+    public static String baseProdTypeFieldLabel = "//label[text()='* Product Type:']";
+    public static String baseProdNameField = "//input[@id='baseProductName']";
+    public static String baseProdDataGroupField = "//select[@id='baseProductGroupId']";
+    public static String baseProdTypeField = "//select[@id='productType']";
+    public static String prodTypeReport = "//select[@id='productType']/option[@value='27']";
+    public static String prodTypeService = "//select[@id='productType']/option[@value='28']";
+    public static String prodTypeProcessedReport = "//select[@id='productType']/option[@value='29']";
+    public static String baseProdReportSourceLabel = "//label[text()='* Report Source:']";
+    public static String baseProdReportSourceField = "//select[@id='reportSourceLookup']";
+    public static String repSourceValexRequestMethod = "//select[@id='reportSourceLookup']/option[@value='33']";
+    public static String repSourceBSG = "//select[@id='reportSourceLookup']/option[@value='34']";
+    public static String repSourceRPPropertyHub = "//select[@id='reportSourceLookup']/option[@value='35']";
+    public static String repSourceValexFindMethod = "//select[@id='reportSourceLookup']/option[@value='36']";
+    public static String baseProdReportTypeLabel = "//label[text()='* Report Type:']";
+    public static String baseProdReportTypeField = "//select[@id='reportType']";
+    public static String repTypePropertyProfile = "//option[@value='Property Profile']";
+    public static String repTypeRetroVal = "//option[@value='RetroVal']";
+    public static String repTypeRPAVM = "//option[@value='RP AVM']";
+    public static String repTypeScorecard = "//option[@value='Scorecard']";
+    public static String repTypeCBAAVM = "//option[@value='CBA AVM']";
+    public static String repTypeAussieAVM = "//option[@value='Aussie AVM']";
+    public static String reportNameLabel = "//label[text()='* Report Name:']";
+    public static String reportNameField = "//input[@id='reportName']";
+    public static String baseProdDupValServiceTypeLabel = "//td[text()='* Dup Valuation Service Type:']";
+    public static String baseProdDupValServiceTypeField = "//select[@id='dupValServiceType']";
+    public static String dupValServiceResidetialSF = "//select[@id='dupValServiceType']/option[@value='23']";
+    public static String dupValServiceConstructionSF = "//select[@id='dupValServiceType']/option[@value='24']";
+    public static String dupValServiceCompTitleSF = "//select[@id='dupValServiceType']/option[@value='25']";
+    public static String dupValServiceLeaseTitleSF = "//select[@id='dupValServiceType']/option[@value='26']";
+    public static String baseProdValServiceTypeLabel = "//td[text()='* Valex Service Type:']";
+    public static String baseProdValServiceTypeField = "//input[@id='valexServiceType']";
+    
+    public static String baseProdValSubTypeLabel = "//td[text()='* ValSubType:']";
+    public static String baseProdValSubTypeField = "//select[@id='valSubType']";
+    public static String valSubTypeNA = "//select[@id='valSubType']/option[@value='2']";
+    public static String valSubTypeDesktopValuation = "//select[@id='valSubType']/option[@value='10']";
+    public static String valSubTypeShortForm = "//select[@id='valSubType']/option[@value='11']";
+    public static String valSubTypeStandard = "//select[@id='valSubType']/option[@value='12']";
+   
+    public static String baseProdValSubTypeNoteLabel = "//td[text()='ValSubTypeNote:']";
+    public static String baseProdValSubTypeNoteField = "//input[@id='valSubTypeNote']";
+   
+    public static String baseProdConstructionLabel = "//td[text()='* Construction:']"; 	 
+    public static String baseProdConstructionField = "//select[@id='construction']";
+   
+    public static String valexRequestAVMSourceLabel = "//td[text()='Valex Request AVM Source:']";
+    public static String valexRequestAVMSourceField = "//select[@id='requestAvmSource']";
+   
+    public static String valexResponseAVMSourceLabel = "//td[text()='Valex Response AVM Source:']";
+    public static String valexResponseAVMSourceField = "//select[@id='responseAvmSource']";
 
     
     

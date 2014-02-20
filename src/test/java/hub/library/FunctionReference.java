@@ -477,7 +477,7 @@ public class FunctionReference extends Results {
     
     public void selectOption(By by, String value) {
 		Select dropdown = new Select(driver.findElement(by));
-		dropdown.selectByVisibleText(value);
+		dropdown.selectByValue(value);
 	}
         
 }

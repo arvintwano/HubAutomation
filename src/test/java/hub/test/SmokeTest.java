@@ -52,7 +52,8 @@ public class SmokeTest extends TestInitReference {
 				upsu.smokeProductTab();
 		        break;
 			case "DEEP":
-				uhlu.smokeDeepLink();				
+				uhlu.smokeDeepLink();	
+				break;
 			default:
 				fail(testcase);
 		        Assert.fail("Invalid Test Data");

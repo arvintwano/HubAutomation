@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="hub.test.AdminBaseProductAddNewTest">
+      <class name="hub.test.SmokeTest">
         <methods>
           <include name="Startup"/>
           <include name="teardown"/>
-          <include name="testBaseProductAddNew"/>
+          <include name="testSmokeTest" invocation-numbers="2"/>
+          <include name="reinitializeBrowser"/>
         </methods>
-      </class> <!-- hub.test.AdminBaseProductAddNewTest -->
+      </class> <!-- hub.test.SmokeTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

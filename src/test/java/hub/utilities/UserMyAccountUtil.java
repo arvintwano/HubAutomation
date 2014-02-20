@@ -29,21 +29,21 @@ public class UserMyAccountUtil extends FunctionReference{
 		
 		try {
 			Assert.assertTrue(isElementPresent(xpath(myAccountFN)));
-		} catch (Exception e) {
+		} catch (AssertionError e) {
 			fail(testCase);
 			takeScreenshot();
 			resultcount++;
 		}
 		try {
 			Assert.assertTrue(isElementPresent(xpath(myAccountLN)));
-		} catch (Exception e) {
+		} catch (AssertionError e) {
 			fail(testCase);
 			takeScreenshot();
 			resultcount++;
 		}
 		try {
 			Assert.assertTrue(isElementPresent(xpath(myAccountEmail)));
-		} catch (Exception e) {
+		} catch (AssertionError e) {
 			fail(testCase);
 			takeScreenshot();
 			resultcount++;
@@ -55,5 +55,7 @@ public class UserMyAccountUtil extends FunctionReference{
 			pass(testCase);
 		}
 	}
+	
+	
 
 }

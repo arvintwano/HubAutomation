@@ -75,13 +75,13 @@ public class ObjectReference {
     
     //Reset Password
     public static String oldForgotPassword = "//form[@id='hubForgotPassForm']";
-    public static String userForgotPasswordInstruction = "(//span)[7]";
-    public static String userForgotPasswordBtn = "(//input[@id='subRegInd'])[2]";
+    public static String userForgotPasswordInstruction = "(//span)[4]";
+    public static String userForgotPasswordBtn = "(//input[@id='subRegInd'])[3]";
     public static String userForgotPasswordUsername = "//input[@id='user-name']";
     public static String userForgotPasswordEmailAddress = "//input[@id='email-address']";
     public static String userForgotPasswordError = "//div[@id='errorMessage']";
     public static String userForgotPasswordEmpty = "//div[@id='errorMessage']";
-    public static String userResetPasswordBtn = "(//input[@id='subRegInd'])[3]";
+    public static String userResetPasswordBtn = "(//input[@id='subRegInd'])[4]";
     public static String userResetPasswordMessage = "(//span)[6]";
     public static String userResetPasswordEmailSent = "//label[@class='fontStyle12']";
     public static String userResetPasswordSuccessPopup = "//div[@id='cboxContent']";

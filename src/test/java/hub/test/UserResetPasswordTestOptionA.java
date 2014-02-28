@@ -25,6 +25,7 @@ public class UserResetPasswordTestOptionA extends TestInitReference {
 		try {
 //			AccessGmailUtil agu = new AccessGmailUtil();
 //			agu.accessGmail();
+			driver.navigate().to("https://stage-aussieselect.rppropertyhub.com");
 			UserResetPasswordUtil urpt = new UserResetPasswordUtil(input);
 			urpt.testOldForgottenPassword();
 			

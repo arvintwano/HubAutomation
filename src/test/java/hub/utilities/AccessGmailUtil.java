@@ -16,7 +16,7 @@ public class AccessGmailUtil extends FunctionReference{
 		waitForElementPresent(xpath("(//tr)[5]")); 
 		click(xpath("(//tr)[5]"));
 //		waitForElementPresent(xpath("(//a)[63]"));
-		click(xpath("//a[contains(@href, 'http://olddev.rppropertyhub.com/n/Reset-Password')]"));
+		click(xpath("//a[contains(@href, '/Reset-Password')]"));
 //		click(xpath("(//a)[53]"));
 		
 		

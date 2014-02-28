@@ -126,7 +126,7 @@ public class UserHubLoginUtil extends FunctionReference {
 		try {
 			Assert.assertTrue(isElementPresent(xpath(userLoginUsername)));
 			Assert.assertTrue(isElementPresent(xpath(userLoginPassword)));
-			Assert.assertTrue(isElementPresent(xpath(userLoginButton)));
+			Assert.assertTrue(isElementPresent(xpath(loginButton)));
 		} catch (AssertionError e) {
 			takeScreenshot();
 			resultcount++;
@@ -140,7 +140,7 @@ public class UserHubLoginUtil extends FunctionReference {
 
 		type(xpath(userLoginUsername), username);
 		type(xpath(userLoginPassword), password);
-		click(xpath(userLoginButton));
+		click(xpath(loginButton));
 		
 		if (resultcount != 0) {
 			fail(testCase);
@@ -154,7 +154,7 @@ public class UserHubLoginUtil extends FunctionReference {
 		waitForElementPresent(xpath(userLoginUsername));
 		isElementPresent(xpath(userLoginUsername));
 		isElementPresent(xpath(userLoginPassword));
-		isElementPresent(xpath(userLoginButton));
+		isElementPresent(xpath(loginButton));
 		
 		String username = "";
 		String password = "";
@@ -168,7 +168,7 @@ public class UserHubLoginUtil extends FunctionReference {
 		}
 		type(xpath(userLoginUsername), username);
 		type(xpath(userLoginPassword), password);
-		click(xpath(userLoginButton));
+		click(xpath(loginButton));
 	}
 
 	public void smokeDeepLink() throws InterruptedException, IOException{
@@ -184,7 +184,7 @@ public class UserHubLoginUtil extends FunctionReference {
 		try {
 			Assert.assertTrue(isElementPresent(xpath(userLoginUsername)));
 			Assert.assertTrue(isElementPresent(xpath(userLoginPassword)));
-			Assert.assertTrue(isElementPresent(xpath(userLoginButton)));
+			Assert.assertTrue(isElementPresent(xpath(loginButton)));
 		} catch (AssertionError e) {
 			takeScreenshot();
 			resultcount++;
@@ -197,7 +197,7 @@ public class UserHubLoginUtil extends FunctionReference {
 
 		type(xpath(userLoginUsername), username);
 		type(xpath(userLoginPassword), password);
-		click(xpath(userLoginButton));
+		click(xpath(loginButton));
 		
 		if (resultcount != 0) {
 			fail(testCase);

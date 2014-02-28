@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="7" passed="6">
+<testng-results skipped="0" failed="1" total="4" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1797515" started-at="2014-02-20T02:31:21Z" finished-at="2014-02-20T03:01:18Z">
+  <suite name="Default suite" duration-ms="1563751" started-at="2014-02-26T11:56:14Z" finished-at="2014-02-26T12:22:18Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1797515" started-at="2014-02-20T02:31:21Z" finished-at="2014-02-20T03:01:18Z">
+    <test name="Default test" duration-ms="1563751" started-at="2014-02-26T11:56:14Z" finished-at="2014-02-26T12:22:18Z">
       <class name="hub.test.SmokeTest">
-        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.SmokeTest@ea083a]" name="Startup" is-config="true" duration-ms="56618" started-at="2014-02-20T10:31:21Z" finished-at="2014-02-20T10:32:17Z">
+        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.SmokeTest@3e5052b9]" name="Startup" is-config="true" duration-ms="67297" started-at="2014-02-26T19:56:14Z" finished-at="2014-02-26T19:57:22Z">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,7 +16,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Startup -->
-        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@ea083a]" name="testSmokeTest" duration-ms="123898" started-at="2014-02-20T10:32:18Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-20T10:34:22Z">
+        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@3e5052b9]" name="testSmokeTest" duration-ms="438946" started-at="2014-02-26T19:57:22Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-26T20:04:41Z">
           <params>
             <param index="0">
               <value>
@@ -25,18 +25,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@1891eb24]]>
+                <![CDATA[[Ljava.lang.String;@4ea386b8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@ea083a]" name="reinitializeBrowser" is-config="true" duration-ms="6804" started-at="2014-02-20T10:34:22Z" finished-at="2014-02-20T10:34:29Z">
+        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@3e5052b9]" name="reinitializeBrowser" is-config="true" duration-ms="43643" started-at="2014-02-26T20:04:41Z" finished-at="2014-02-26T20:05:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reinitializeBrowser -->
-        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@ea083a]" name="testSmokeTest" duration-ms="297407" started-at="2014-02-20T10:34:29Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-20T10:39:26Z">
+        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@3e5052b9]" name="testSmokeTest" duration-ms="462648" started-at="2014-02-26T20:05:25Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-26T20:13:07Z">
           <params>
             <param index="0">
               <value>
@@ -45,18 +45,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@13e49516]]>
+                <![CDATA[[Ljava.lang.String;@51e1c25d]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@ea083a]" name="reinitializeBrowser" is-config="true" duration-ms="4013" started-at="2014-02-20T10:39:26Z" finished-at="2014-02-20T10:39:30Z">
+        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@3e5052b9]" name="reinitializeBrowser" is-config="true" duration-ms="46726" started-at="2014-02-26T20:13:07Z" finished-at="2014-02-26T20:13:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reinitializeBrowser -->
-        <test-method status="FAIL" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@ea083a]" name="testSmokeTest" duration-ms="260600" started-at="2014-02-20T10:39:30Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-20T10:43:51Z">
+        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@3e5052b9]" name="testSmokeTest" duration-ms="122260" started-at="2014-02-26T20:13:54Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-26T20:15:56Z">
           <params>
             <param index="0">
               <value>
@@ -65,7 +65,27 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@4d5735df]]>
+                <![CDATA[[Ljava.lang.String;@3c9f91aa]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSmokeTest -->
+        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@3e5052b9]" name="reinitializeBrowser" is-config="true" duration-ms="39598" started-at="2014-02-26T20:15:56Z" finished-at="2014-02-26T20:16:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reinitializeBrowser -->
+        <test-method status="FAIL" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@3e5052b9]" name="testSmokeTest" duration-ms="301821" started-at="2014-02-26T20:16:36Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-26T20:21:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[class java.lang.String]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[Ljava.lang.String;@5b900e6e]]>
               </value>
             </param>
           </params>
@@ -107,91 +127,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@ea083a]" name="reinitializeBrowser" is-config="true" duration-ms="4233" started-at="2014-02-20T10:43:51Z" finished-at="2014-02-20T10:43:55Z">
+        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@3e5052b9]" name="reinitializeBrowser" is-config="true" duration-ms="40164" started-at="2014-02-26T20:21:38Z" finished-at="2014-02-26T20:22:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reinitializeBrowser -->
-        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@ea083a]" name="testSmokeTest" duration-ms="385603" started-at="2014-02-20T10:43:55Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-20T10:50:20Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@3f7e18e]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@ea083a]" name="reinitializeBrowser" is-config="true" duration-ms="18063" started-at="2014-02-20T10:50:20Z" finished-at="2014-02-20T10:50:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reinitializeBrowser -->
-        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@ea083a]" name="testSmokeTest" duration-ms="316349" started-at="2014-02-20T10:50:39Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-20T10:55:55Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@6f933ab]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@ea083a]" name="reinitializeBrowser" is-config="true" duration-ms="4624" started-at="2014-02-20T10:55:55Z" finished-at="2014-02-20T10:56:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reinitializeBrowser -->
-        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@ea083a]" name="testSmokeTest" duration-ms="37185" started-at="2014-02-20T10:56:00Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-20T10:56:37Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@52af2320]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@ea083a]" name="reinitializeBrowser" is-config="true" duration-ms="3980" started-at="2014-02-20T10:56:37Z" finished-at="2014-02-20T10:56:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reinitializeBrowser -->
-        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@ea083a]" name="testSmokeTest" duration-ms="273418" started-at="2014-02-20T10:56:41Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-20T11:01:14Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[class java.lang.String]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[Ljava.lang.String;@682b3448]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@ea083a]" name="reinitializeBrowser" is-config="true" duration-ms="3770" started-at="2014-02-20T11:01:14Z" finished-at="2014-02-20T11:01:18Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reinitializeBrowser -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.SmokeTest@ea083a]" name="teardown" is-config="true" duration-ms="343" started-at="2014-02-20T11:01:18Z" finished-at="2014-02-20T11:01:18Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.SmokeTest@3e5052b9]" name="teardown" is-config="true" duration-ms="230" started-at="2014-02-26T20:22:18Z" finished-at="2014-02-26T20:22:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

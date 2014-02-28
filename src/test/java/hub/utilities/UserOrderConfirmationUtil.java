@@ -108,6 +108,7 @@ public class UserOrderConfirmationUtil extends FunctionReference{
 	
 	public void testStartNewOrder() throws Exception{
 		click(By.linkText("Start new order"));
+		Thread.sleep(3000);
 	}
 	
 	public void testMortgageValuation() throws Exception {

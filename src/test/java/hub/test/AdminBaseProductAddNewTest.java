@@ -39,14 +39,18 @@ public class AdminBaseProductAddNewTest extends TestInitReference{
 				abpu.testBaseProductService();
 				abpu.testBaseProductProcessedReport();
 				abpu.testBaseProductAddNewCancel();
-				Thread.sleep(6000);
+				
+				Alert test = driver.switchTo().alert();
+				test.getText();
+				test.accept();
+				Thread.sleep(30000);
 		        break;
 			case "MANDATORY":
 				alu.adminLogin();
 				abpu.testBaseProductNavigation();
 				abpu.testBaseProductAddNewLink();
 				abpu.testBaseProductFillOut();
-				abpu.testBaseProductAddNewSave();	
+				abpu.testBaseProductAddNewSave();
 				abpu.testBaseProductValidation();
 				Thread.sleep(6000);
 		        break;
@@ -57,7 +61,6 @@ public class AdminBaseProductAddNewTest extends TestInitReference{
 				abpu.testBaseProductFillOut();
 				abpu.testBaseProductActivate();
 				abpu.testBaseProductAddNewSave();
-				Thread.sleep(6000);
 		        break;		
 			default:
 				fail(testcase);

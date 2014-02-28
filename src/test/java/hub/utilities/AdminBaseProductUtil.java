@@ -716,7 +716,7 @@ public class AdminBaseProductUtil extends FunctionReference{
 	public void testBaseProductAddNewSave() throws Exception {		
 		waitForElementPresent(xpath(baseProdSaveBtn));
 		click(xpath(baseProdSaveBtn));
-		Thread.sleep(3000);
+		Thread.sleep(30000);
 	}
 	
 	public void testBaseProductList() throws Exception {		

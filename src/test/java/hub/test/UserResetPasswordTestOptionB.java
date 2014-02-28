@@ -20,6 +20,7 @@ public class UserResetPasswordTestOptionB extends TestInitReference {
 	public void testResetPasswordOptionB() {
 		
 		try {			
+			driver.navigate().to("https://stage-bankmelbourne.rppropertyhub.com");
 			UserResetPasswordUtil urpt = new UserResetPasswordUtil();
 			urpt.testResetPasswordSetup();
 			urpt.testOneTimePassword();

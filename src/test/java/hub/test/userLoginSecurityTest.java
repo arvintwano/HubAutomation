@@ -14,7 +14,7 @@ public class UserLoginSecurityTest extends TestInitReference {
 		String testcase = "Testing Testcase - Login Security";
 		
 		try {
-			//driver.navigate().to("https://olddev.rppropertyhub.com");
+			driver.navigate().to("https://stage-cbalender.rppropertyhub.com");
 			UserHubLoginUtil uhlu = new UserHubLoginUtil();
 			uhlu.testLoginSecurity();
 		} catch (Exception e) {

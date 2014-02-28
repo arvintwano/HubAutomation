@@ -298,14 +298,14 @@ public class UserResetPasswordUtil extends FunctionReference{
 			try {
 				Assert.assertTrue(isElementPresent(xpath(userForgotPasswordInstruction)));
 			} catch (AssertionError e) {
-				fail(testCase);
+				fail("Forgot password label");
 				takeScreenshot();
 				resultcount++;
 			}
 			try {
-				Assert.assertEquals("Enter Username and Email Address below",getText(xpath(userForgotPasswordInstruction)));
+				Assert.assertEquals("Enter Username and Email Address below.",getText(xpath(userForgotPasswordInstruction)));
 			} catch (AssertionError e) {
-				fail(testCase);
+				fail("Forgot password label");
 				takeScreenshot();
 				resultcount++;
 			}
@@ -313,7 +313,7 @@ public class UserResetPasswordUtil extends FunctionReference{
 			try {
 				Assert.assertTrue(isElementPresent(xpath(userForgotPasswordUsername)));
 			} catch (AssertionError e) {
-				fail(testCase);
+				fail("Username");
 				takeScreenshot();
 				resultcount++;
 			}
@@ -321,7 +321,7 @@ public class UserResetPasswordUtil extends FunctionReference{
 			try {
 				Assert.assertTrue(isElementPresent(xpath(userForgotPasswordEmailAddress)));
 			} catch (AssertionError e) {
-				fail(testCase);
+				fail("Email");
 				takeScreenshot();
 				resultcount++;
 			}
@@ -329,7 +329,7 @@ public class UserResetPasswordUtil extends FunctionReference{
 			try {
 				Assert.assertTrue(isElementPresent(xpath(userResetPasswordBtn)));
 			} catch (AssertionError e) {
-				fail(testCase);
+				fail("Reset Password Button");
 				takeScreenshot();
 				resultcount++;
 			}

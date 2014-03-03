@@ -18,7 +18,7 @@ public class AdminPromotionCodeUtil extends FunctionReference{
 		
 	}
 	
-	public void checkPromotionHeaderText() {
+	public void checkPromotionHeader() {
 
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionListHeaderText)));
@@ -32,6 +32,25 @@ public class AdminPromotionCodeUtil extends FunctionReference{
 			fail("Admin Promotion Code : Header Text is not present");
 		}
 
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionListAddNewText)));
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Header Add New Link is not present");
+		}
+		
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionListHelpLink)));
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Header Help Link is not present");
+		}
+		
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionListHelpIcon)));
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Header Help icon is not present");
+		}
+		
+		
 	}
 	
 	public void checkAttributes() throws IOException{

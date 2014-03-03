@@ -2,7 +2,6 @@ package hub.test;
 
 import java.io.IOException;
 import org.testng.annotations.Test;
-import org.testng.Assert;
 import org.testng.AssertJUnit;
 import hub.utilities.AdminLoginUtil;
 import hub.utilities.AdminPromotionCodeUtil;
@@ -11,12 +10,13 @@ import hub.library.FunctionReference;
 
 public class AdminPromotionCodeTest extends FunctionReference {
 	
+	AdminPromotionCodeUtil admPromoCodeUtil;
 	@Test(description="Admin Promotion Code Test", dataProvider = "Data-Provider-Function")
 	
 	public AdminPromotionCodeTest(String[] i) {		
 		
 		this.login();
-		AdminPromotionCodeUtil admPromoCodeUtil = new AdminPromotionCodeUtil();
+		this.admPromoCodeUtil = new AdminPromotionCodeUtil();
 		
 		try {
 			admPromoCodeUtil.navigateToPromoListPage();
@@ -26,7 +26,7 @@ public class AdminPromotionCodeTest extends FunctionReference {
 		}
 
 		try {
-			admPromoCodeUtil.checkPromotionHeaderText();
+			admPromoCodeUtil.checkPromotionHeader();
 			admPromoCodeUtil.checkAttributes();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

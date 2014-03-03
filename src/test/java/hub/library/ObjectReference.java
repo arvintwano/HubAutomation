@@ -344,11 +344,11 @@ public class ObjectReference {
     public static String adminPromotionsSearchTextField = "//input[@id='promotionSearchTextField']";
     public static String adminPromotionsSearchCloseButton = "//img[@id='baseProductSearchClearIcon']";
     public static String adminPromotionsSearchButton = "//input[@id='baseProductSearchIcon']";
-    public static String adminPromotionListHeaderText = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr/td/span/a";
     
-//    public static String adminPromotionsTab = "";
-//    public static String adminPromotionsTab = "";
-//    public static String adminPromotionsTab = "";
+    public static String adminPromotionListHeaderText = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr/td/span/a";
+    public static String adminPromotionListAddNewText = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr/td[1]/a";
+    public static String adminPromotionListHelpLink = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr/td[3]/table/tbody/tr/td[3]/a";
+    public static String adminPromotionListHelpIcon = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr/td[3]/table/tbody/tr/td[1]/img";
     
 }
 

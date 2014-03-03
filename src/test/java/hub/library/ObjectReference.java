@@ -338,6 +338,17 @@ public class ObjectReference {
     //Admin Products - Custom Products
     public static String  adminCustomProductLink= "//a[contains(@href, 'n/Custom-Products/')]";
     
+    //Admin Promotion Code UI
+    public static String productsTab = "//*[@id='cssmenu']/ul/li[2]/span";
+    public static String adminPromotionsTab = "//*[@id='cssmenu']/ul/li[2]/ul/li[5]/a/span";
+    public static String adminPromotionsSearchTextField = "//input[@id='promotionSearchTextField']";
+    public static String adminPromotionsSearchCloseButton = "//img[@id='baseProductSearchClearIcon']";
+    public static String adminPromotionsSearchButton = "//input[@id='baseProductSearchIcon']";
+    public static String adminPromotionListHeaderText = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr/td/span/a";
+    
+//    public static String adminPromotionsTab = "";
+//    public static String adminPromotionsTab = "";
+//    public static String adminPromotionsTab = "";
     
 }
 

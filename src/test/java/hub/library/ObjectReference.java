@@ -411,6 +411,13 @@ public class ObjectReference {
     public static String adminPromotionNew_Cancel = "";
     public static String adminPromotionNew_Save = "";
     public static String adminPromotionNew_Back = "";
+    
+  //Admin Promotion Code UI Add New Horizontal Lines
+    public static String adminPromotionNew_HorizontalLine1 = "";
+    public static String adminPromotionNew_HorizontalLine2 = "";
+    public static String adminPromotionNew_HorizontalLine3 = "";
+    public static String adminPromotionNew_HorizontalLine4 = "";
+    public static String adminPromotionNew_HorizontalLine5 = "";
 }
 
 

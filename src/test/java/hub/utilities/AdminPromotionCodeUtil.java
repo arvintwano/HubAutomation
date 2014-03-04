@@ -28,12 +28,17 @@ String [] input;
 	public void checkPromotionCodeForm(){
 		try {
 			click(xpath(adminPromotionListAddNewText));
+			pass("Successfully navaigate to Promotion Code Add New page");
 			waitForElementPresent(xpath(adminPromotionNew_HeaderText));
+			
 			checkPromotionNewHeader();
 			checkPromotionNewButtons();
+			checkHorizontalLines();
+			
 			checkAddNewFormLabels();
 			testMandatoryFieldsValidaiton();
 			checkAddNewFormFields();
+			
 			fieldInputTest();
 		} catch (Exception e) {
 			fail("Fail to execute testing");
@@ -92,6 +97,43 @@ String [] input;
 			pass("Successful on testing of header container");
 		}
 		
+	}
+	
+	public void checkHorizontalLines(){
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HorizontalLine1)));
+			pass("Admin Promotion Code : Horizontal Line 1 is present");
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Horizontal Line 1  is not present");
+		}
+		
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HorizontalLine2)));
+			pass("Admin Promotion Code : Horizontal Line 2 is present");
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Horizontal Line 2 is not present");
+		}
+		
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HorizontalLine3)));
+			pass("Admin Promotion Code : Horizontal Line 3 is present");
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Horizontal Line 3 is not present");
+		}
+		
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HorizontalLine4)));
+			pass("Admin Promotion Code : Horizontal Line 4 is present");
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Horizontal Line 4 is not present");
+		}
+		
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HorizontalLine5)));
+			pass("Admin Promotion Code : Horizontal Line 5 is present");
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Horizontal Line 5 is not present");
+		}
 	}
 	
 	public void checkAttributes() throws Exception{

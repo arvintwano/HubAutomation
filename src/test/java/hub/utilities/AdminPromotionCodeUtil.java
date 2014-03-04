@@ -44,6 +44,7 @@ String [] input;
 		resultcount = 0;
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionListHeaderText)));
+			pass("Admin Promotion Code : Header Text is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Text is not present");
 			resultcount++;
@@ -51,6 +52,7 @@ String [] input;
 		
 		try {
 			Assert.assertEquals("PROMOTIONS", getText(xpath(adminPromotionListHeaderText)));
+			pass("Admin Promotion Code : Header Text is equal to PROMOTIONS");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Text is not equal to PROMOTIONS");
 			resultcount++;
@@ -59,6 +61,7 @@ String [] input;
 //		Actions action = new Actions(webdriver); action.moveToElement();
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionListAddNewText)));
+			pass("Admin Promotion Code : Header Add New Link is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Add New Link is not present");
 			resultcount++;
@@ -66,6 +69,7 @@ String [] input;
 		
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionListHelpLink)));
+			pass("Admin Promotion Code : Header Help Link is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Help Link is not present");
 			resultcount++;
@@ -73,6 +77,7 @@ String [] input;
 		
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionListHelpIcon)));
+			pass("Admin Promotion Code : Header Help icon is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Help icon is not present");
 			resultcount++;
@@ -92,6 +97,7 @@ String [] input;
 		click(xpath(adminPromotionsSearchButton));
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionsSearchTextField)));
+			pass("Admin Promotion Code : Search input is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Search input is not present");
 			takeScreenshot();
@@ -100,6 +106,7 @@ String [] input;
 		
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionsSearchCloseButton)));
+			pass("Admin Promotion Code : Close Button is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Close Button is not present");
 			takeScreenshot();
@@ -108,6 +115,7 @@ String [] input;
 		
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionsSearchButton)));
+			pass("Admin Promotion Code : Search Button is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Search Button is not present");
 			takeScreenshot();
@@ -127,22 +135,25 @@ String [] input;
 		waitForElementPresent(xpath(adminLoginUsername));			
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminLoginUsername)));
+			pass("Login Username is present");
 		} catch (AssertionError e) {
-			fail("Password" + " is not present");
+			fail("Login Username is not present");
 			takeScreenshot();
 			resultcount++;
 		}
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminLoginPassword)));
+			pass("Login Password is present");
 		} catch (AssertionError e) {
-			fail("Password" + " is not present");
+			fail("Login Password is not present");
 			takeScreenshot();
 			resultcount++;
 		}
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminLoginButton)));
+			pass("Login button is present");
 		} catch (AssertionError e) {
-			fail("Password" + " is not present");
+			fail("Login button is not present");
 			takeScreenshot();
 			resultcount++;
 		}
@@ -171,6 +182,7 @@ String [] input;
 		for (int i = 0; i < xpaths.length; i++) {
 			try {
 				Assert.assertTrue(isElementPresent(xpath(xpaths[i])));
+				fail("Admin Promotion Code Add New: " + labels[i] + " label is present");
 			} catch (AssertionError e) {
 				fail("Admin Promotion Code Add New: " + labels[i] + " label is not present");
 				resultcount++;
@@ -178,6 +190,7 @@ String [] input;
 			
 			try {
 				Assert.assertEquals(labels[i], getText(xpath(adminPromotionNew_Name)));
+				pass("Admin Promotion Code Add New: Label is equal to '" + labels[i] + "'");
 			} catch (AssertionError e) {
 				fail("Admin Promotion Code Add New: Label is not equal to '" + labels[i] + "'");
 				resultcount++;
@@ -211,6 +224,7 @@ String [] input;
 		for (int i = 0; i < xpaths.length; i++) {
 			try {
 				Assert.assertTrue(isElementPresent(xpath(xpaths[i])));
+				pass("Admin Promotion Code Add New: Input field " + inputFields[i] + " is present");
 			} catch (AssertionError e) {
 				fail("Admin Promotion Code Add New: Input field " + inputFields[i] + " is not present");
 				resultcount++;
@@ -230,6 +244,7 @@ String [] input;
 		resultcount = 0;
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HeaderText)));
+			pass("Admin Promotion Code : Header Text is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Text is not present");
 			resultcount++;
@@ -237,6 +252,7 @@ String [] input;
 		
 		try {
 			Assert.assertEquals("PROMOTIONS", getText(xpath(adminPromotionNew_HeaderText)));
+			pass("Admin Promotion Code : Header Text is equal to PROMOTIONS");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Text is not equal to PROMOTIONS");
 			resultcount++;
@@ -244,6 +260,7 @@ String [] input;
 
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_ShowHistoryText)));
+			pass("Admin Promotion Code : Header Show History Link is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Show History Link is not present");
 			resultcount++;
@@ -251,6 +268,7 @@ String [] input;
 		
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HelpLink)));
+			pass("Admin Promotion Code : Header Help Link is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Help Link is not present");
 			resultcount++;
@@ -258,6 +276,7 @@ String [] input;
 		
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HelpIcon)));
+			pass("Admin Promotion Code : Header Help icon is present");
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Help icon is not present");
 			resultcount++;

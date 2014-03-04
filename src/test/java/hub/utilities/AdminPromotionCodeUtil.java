@@ -29,7 +29,8 @@ String [] input;
 		try {
 			waitForElementPresent(xpath(adminPromotionNew_HeaderText));
 			checkPromotionNewHeader();
-			checkAddNewLabels();
+			checkAddNewFormLabels();
+			checkAddNewFormFields();
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -55,6 +56,7 @@ String [] input;
 			resultcount++;
 		}
 
+//		Actions action = new Actions(webdriver); action.moveToElement();
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionListAddNewText)));
 		} catch (AssertionError e) {
@@ -157,11 +159,11 @@ String [] input;
 		}
 	}
 	
-	public void checkAddNewLabels(){
+	public void checkAddNewFormLabels(){
 		resultcount = 0;
-		String xpaths[] = {adminPromotionNew_Name,"adminPromotionNew_Description","adminPromotionNew_CodePrefix", "adminPromotionNew_CodeNumber", "adminPromotionNew_Multiplier", "adminPromotionNew_UserLimit", 
-				"adminPromotionNew_StartDate", "adminPromotionNew_FinishDate", "adminPromotionNew_Status", "adminPromotionNew_Type", "adminPromotionNew_TypeValue", "adminPromotionNew_Channel", "adminPromotionNew_BaseProduct", 
-				"adminPromotionNew_WeekDays", "adminPromotionNew_Region"};
+		String xpaths[] = {adminPromotionNew_Name,adminPromotionNew_Description,adminPromotionNew_CodePrefix, adminPromotionNew_CodeNumber, adminPromotionNew_Multiplier, adminPromotionNew_UserLimit, 
+				adminPromotionNew_StartDate, adminPromotionNew_FinishDate, adminPromotionNew_Status, adminPromotionNew_Type, adminPromotionNew_TypeValue, adminPromotionNew_Channel, adminPromotionNew_BaseProduct, 
+				adminPromotionNew_WeekDays, adminPromotionNew_Region};
 		
 		String labels[] = {"* Name:","* Description:","* Code Prefix:", "* Code Number:", "* Multiplier:", "* UserLimit:", "* Start Date:", "* Finish Date:", "* Status:", 
 				"Type:", "Type Value:", "Channel:", "BaseProduct:", "WeekDays:", "Region:"};
@@ -186,6 +188,39 @@ String [] input;
 			fail("Fail on testing of Promotion Code Form Labels");
 		} else {
 			pass("Successful on testing of Promotion Code Form Labels");
+		}
+		
+	}
+	
+	public void checkAddNewFormFields(){
+		resultcount = 0;
+		String xpaths[] = {adminPromotionNew_Input_Name, adminPromotionNew_Input_Description, adminPromotionNew_Input_CodePrefix, adminPromotionNew_Input_CodeNumber, 
+				adminPromotionNew_Input_chk_Multiplier, adminPromotionNew_Input_txtbox_Multiplier, adminPromotionNew_Input_chk_UserLimit, adminPromotionNew_Input_txtbox_UserLimit, 
+				adminPromotionNew_Input_StartDate, adminPromotionNew_Input_FinishDate, adminPromotionNew_Input_Status, adminPromotionNew_Input_Type, adminPromotionNew_Input_TypeValue, 
+				adminPromotionNew_Input_Channel, adminPromotionNew_Input_BaseProduct, adminPromotionNew_Input_chk_WeekDays_Sun, adminPromotionNew_Input_chk_WeekDays_Mon, 
+				adminPromotionNew_Input_chk_WeekDays_Tue, adminPromotionNew_Input_chk_WeekDays_Wed, adminPromotionNew_Input_chk_WeekDays_Thu, adminPromotionNew_Input_chk_WeekDays_Fri, 
+				adminPromotionNew_Input_chk_WeekDays_Sat, adminPromotionNew_Input_chk_Region_Act, adminPromotionNew_Input_chk_Region_Nt, adminPromotionNew_Input_chk_Region_Nsw, 
+				adminPromotionNew_Input_chk_Region_Qld, adminPromotionNew_Input_chk_Region_Sa, adminPromotionNew_Input_chk_Region_Tas, adminPromotionNew_Input_chk_Region_Vic, 
+				adminPromotionNew_Input_chk_Region_Wa};
+		String inputFields[] = {"Name", "Description", "Code Prefix", "Code Number", "Checkbox Multiplier", "Textbox Multiplier", "Checkbox User Limit", "Textbox User Limit", 
+				"Start Date", "FinishDate", "Status", "Type", "Type Value", "Channel", "BaseProduct", "Checkbox WeekDays Sunday", "Checkbox WeekDays Monday", 
+				"Checkbox WeekDays Tuesday", "Checkbox WeekDays Wednesday", "Checkbox WeekDays Thursday", "Checkbox WeekDays Friday", 
+				"Checkbox WeekDays Saturday", "Checkbox Region ACT", "Checkbox Region NT", "Checkbox Region NSW", "Checkbox Region QLD", "Checkbox Region SA", 
+				"Checkbox Region TAS", "Checkbox Region VIC", "Checkbox Region WA"};
+		
+		for (int i = 0; i < xpaths.length; i++) {
+			try {
+				Assert.assertTrue(isElementPresent(xpath(xpaths[i])));
+			} catch (AssertionError e) {
+				fail("Admin Promotion Code Add New: Input field " + inputFields[i] + " is not present");
+				resultcount++;
+			}
+		}
+		
+		if (resultcount != 0) {
+			fail("Fail on testing of Promotion Code Form Input Fields");
+		} else {
+			pass("Successful on testing of Promotion Code Form Input Fields");
 		}
 		
 	}

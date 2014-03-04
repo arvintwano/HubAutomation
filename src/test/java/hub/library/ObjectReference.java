@@ -399,7 +399,7 @@ public class ObjectReference {
     public static String adminPromotionNew_Input_chk_WeekDays_Sat = "";
     public static String adminPromotionNew_Input_chk_Region_Act = "";
     public static String adminPromotionNew_Input_chk_Region_Nt = "";
-    public static String adminPromotionNew_Input_chk_Region_NSW = "";
+    public static String adminPromotionNew_Input_chk_Region_Nsw = "";
     public static String adminPromotionNew_Input_chk_Region_Qld = "";
     public static String adminPromotionNew_Input_chk_Region_Sa = "";
     public static String adminPromotionNew_Input_chk_Region_Tas = "";

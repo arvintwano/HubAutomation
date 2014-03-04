@@ -20,46 +20,58 @@ public class AdminPromotionCodeUtil extends FunctionReference{
 	
 	public void checkPromotionHeader() throws Exception {
 		Thread.sleep(1000);
+		resultcount = 0;
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionListHeaderText)));
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Text is not present");
+			resultcount++;
 		}
 		
 		try {
 			Assert.assertEquals("PROMOTIONS", getText(xpath(adminPromotionListHeaderText)));
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Text is not equal to PROMOTIONS");
+			resultcount++;
 		}
 
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionListAddNewText)));
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Add New Link is not present");
+			resultcount++;
 		}
 		
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionListHelpLink)));
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Help Link is not present");
+			resultcount++;
 		}
 		
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionListHelpIcon)));
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Header Help icon is not present");
+			resultcount++;
 		}
 		
+		if (resultcount != 0) {
+			fail("Fail on testing of header container");
+		} else {
+			pass("Successful on testing of header container");
+		}
 		
 	}
 	
 	public void checkAttributes() throws IOException{
-			
+		resultcount = 0;
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionsSearchTextField)));
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Search input is not present");
 			takeScreenshot();
+			resultcount++;
 		}
 		
 		try {
@@ -67,6 +79,7 @@ public class AdminPromotionCodeUtil extends FunctionReference{
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Close Button is not present");
 			takeScreenshot();
+			resultcount++;
 		}
 		
 		try {
@@ -74,8 +87,14 @@ public class AdminPromotionCodeUtil extends FunctionReference{
 		} catch (AssertionError e) {
 			fail("Admin Promotion Code : Search Button is not present");
 			takeScreenshot();
+			resultcount++;
 		}
 			
+		if (resultcount != 0) {
+			fail("Fail on testing of search container");
+		} else {
+			pass("Successful on testing of search container");
+		}
 	}
 	
 	public void adminLogin() throws Exception {

@@ -9,7 +9,13 @@ import org.testng.Assert;
 import hub.library.FunctionReference;
 
 public class AdminPromotionCodeUtil extends FunctionReference{
-
+String [] input;
+	public AdminPromotionCodeUtil() {
+	}
+	public AdminPromotionCodeUtil(String[] i) {
+		input = i;
+}
+	
 	public void navigateToPromoListPage() throws Exception{
 		Thread.sleep(1000);
 		actionType(xpath(productsTab), "Promotions");
@@ -64,8 +70,10 @@ public class AdminPromotionCodeUtil extends FunctionReference{
 		
 	}
 	
-	public void checkAttributes() throws IOException{
+	public void checkAttributes() throws Exception{
 		resultcount = 0;
+		type(xpath(adminPromotionsSearchTextField),input[1]);
+		click(xpath(adminPromotionsSearchButton));
 		try {
 			Assert.assertTrue(isElementPresent(xpath(adminPromotionsSearchTextField)));
 		} catch (AssertionError e) {

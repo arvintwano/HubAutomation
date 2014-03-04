@@ -338,7 +338,7 @@ public class ObjectReference {
     //Admin Products - Custom Products
     public static String  adminCustomProductLink= "//a[contains(@href, 'n/Custom-Products/')]";
     
-    //Admin Promotion Code UI
+    //Admin Promotion Code UI List
     public static String productsTab = "//*[@id='cssmenu']/ul/li[2]/span";
     public static String adminPromotionsTab = "//*[@id='cssmenu']/ul/li[2]/ul/li[5]/a/span";
     public static String adminPromotionsSearchTextField = "//input[@id='promotionSearchTextField']";
@@ -349,6 +349,62 @@ public class ObjectReference {
     public static String adminPromotionListAddNewText = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr/td[1]/a";
     public static String adminPromotionListHelpLink = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr/td[3]/table/tbody/tr/td[3]/a";
     public static String adminPromotionListHelpIcon = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td[2]/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr/td[3]/table/tbody/tr/td[1]/img";
+    
+   //Admin Promotion Code UI Add New Header
+    public static String adminPromotionNew_HeaderText = "";
+    public static String adminPromotionNew_ShowHistoryText = "";
+    public static String adminPromotionNew_HelpLink = "";
+    public static String adminPromotionNew_HelpIcon = "";
+ 
+  //Admin Promotion Code UI Add New Label
+    public static String adminPromotionNew_Name = "";
+    public static String adminPromotionNew_Description = "";
+    public static String adminPromotionNew_CodePrefix = "";
+    public static String adminPromotionNew_CodeNumber = "";
+    public static String adminPromotionNew_Multiplier = "";
+    public static String adminPromotionNew_UserLimit = "";
+    public static String adminPromotionNew_StartDate = "";
+    public static String adminPromotionNew_FinishDate = "";
+    public static String adminPromotionNew_Status = "";
+    public static String adminPromotionNew_Type = "";
+    public static String adminPromotionNew_TypeValue = "";
+    public static String adminPromotionNew_Channel = "";
+    public static String adminPromotionNew_BaseProduct = "";
+    public static String adminPromotionNew_WeekDays = "";
+    public static String adminPromotionNew_Region = "";
+    
+  //Admin Promotion Code UI Add New Input fields
+    public static String adminPromotionNew_Input_Name = "";
+    public static String adminPromotionNew_Input_Description = "";
+    public static String adminPromotionNew_Input_CodePrefix = "";
+    public static String adminPromotionNew_Input_CodeNumber = "";
+    public static String adminPromotionNew_Input_chk_Multiplier = "";
+    public static String adminPromotionNew_Input_txtbox_Multiplier = "";
+    public static String adminPromotionNew_Input_chk_UserLimit = "";
+    public static String adminPromotionNew_Input_txtbox_UserLimit = "";
+    public static String adminPromotionNew_Input_StartDate = "";
+    public static String adminPromotionNew_Input_FinishDate = "";
+    public static String adminPromotionNew_Input_Status = "";
+    public static String adminPromotionNew_Input_Type = "";
+    public static String adminPromotionNew_Input_TypeValue = "";
+    public static String adminPromotionNew_Input_Channel = "";
+    public static String adminPromotionNew_Input_BaseProduct = "";
+    public static String adminPromotionNew_Input_chk_WeekDays_Sun = "";
+    public static String adminPromotionNew_Input_chk_WeekDays_Mon = "";
+    public static String adminPromotionNew_Input_chk_WeekDays_Tue = "";
+    public static String adminPromotionNew_Input_chk_WeekDays_Wed = "";
+    public static String adminPromotionNew_Input_chk_WeekDays_Thu = "";
+    public static String adminPromotionNew_Input_chk_WeekDays_Fri = "";
+    public static String adminPromotionNew_Input_chk_WeekDays_Sat = "";
+    public static String adminPromotionNew_Input_chk_Region_Act = "";
+    public static String adminPromotionNew_Input_chk_Region_Nt = "";
+    public static String adminPromotionNew_Input_chk_Region_NSW = "";
+    public static String adminPromotionNew_Input_chk_Region_Qld = "";
+    public static String adminPromotionNew_Input_chk_Region_Sa = "";
+    public static String adminPromotionNew_Input_chk_Region_Tas = "";
+    public static String adminPromotionNew_Input_chk_Region_Vic = "";
+    public static String adminPromotionNew_Input_chk_Region_Wa = "";
+
     
 }
 

@@ -24,7 +24,7 @@ String [] input;
 		
 	}
 	
-	public void checkPromotionHeader() throws Exception {
+	public void checkPromotionListHeader() throws Exception {
 		Thread.sleep(1000);
 		resultcount = 0;
 		try {
@@ -143,5 +143,73 @@ String [] input;
 		}
 	}
 
+	public void checkPromotionCodeForm(){
+		try {
+			waitForElementPresent(xpath(adminPromotionNew_HeaderText));
+			checkPromotionNewHeader();
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void checkAddNewFields(){
+		resultcount = 0;
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_Name)));
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code Add New: Name label is not present");
+			resultcount++;
+		}
+		
+	}
+	
+	public void checkPromotionNewHeader() throws Exception{
+		Thread.sleep(1000);
+		resultcount = 0;
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HeaderText)));
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Header Text is not present");
+			resultcount++;
+		}
+		
+		try {
+			Assert.assertEquals("PROMOTIONS", getText(xpath(adminPromotionNew_HeaderText)));
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Header Text is not equal to PROMOTIONS");
+			resultcount++;
+		}
+
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_ShowHistoryText)));
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Header Show History Link is not present");
+			resultcount++;
+		}
+		
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HelpLink)));
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Header Help Link is not present");
+			resultcount++;
+		}
+		
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_HelpIcon)));
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Header Help icon is not present");
+			resultcount++;
+		}
+		
+		if (resultcount != 0) {
+			fail("Fail on testing of Promotion Code Add New header container");
+		} else {
+			pass("Successful on testing of Promotion Code Add New header container");
+		}
+	}
 
 }

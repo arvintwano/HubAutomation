@@ -4,6 +4,7 @@ import static org.openqa.selenium.By.xpath;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 
 import hub.library.FunctionReference;
@@ -21,6 +22,19 @@ String [] input;
 		actionType(xpath(productsTab), "Promotions");
 		click(xpath(adminPromotionsTab));
 		waitForElementPresent(xpath(adminPromotionsSearchTextField));
+		
+	}
+	
+	public void checkPromotionCodeForm(){
+		try {
+			waitForElementPresent(xpath(adminPromotionNew_HeaderText));
+			checkPromotionNewHeader();
+			checkAddNewLabels();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
@@ -142,27 +156,36 @@ String [] input;
 			pass("Login successful");
 		}
 	}
-
-	public void checkPromotionCodeForm(){
-		try {
-			waitForElementPresent(xpath(adminPromotionNew_HeaderText));
-			checkPromotionNewHeader();
-			
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
 	
-	public void checkAddNewFields(){
+	public void checkAddNewLabels(){
 		resultcount = 0;
-		try {
-			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_Name)));
-		} catch (AssertionError e) {
-			fail("Admin Promotion Code Add New: Name label is not present");
-			resultcount++;
+		String xpaths[] = {adminPromotionNew_Name,"adminPromotionNew_Description","adminPromotionNew_CodePrefix", "adminPromotionNew_CodeNumber", "adminPromotionNew_Multiplier", "adminPromotionNew_UserLimit", 
+				"adminPromotionNew_StartDate", "adminPromotionNew_FinishDate", "adminPromotionNew_Status", "adminPromotionNew_Type", "adminPromotionNew_TypeValue", "adminPromotionNew_Channel", "adminPromotionNew_BaseProduct", 
+				"adminPromotionNew_WeekDays", "adminPromotionNew_Region"};
+		
+		String labels[] = {"* Name:","* Description:","* Code Prefix:", "* Code Number:", "* Multiplier:", "* UserLimit:", "* Start Date:", "* Finish Date:", "* Status:", 
+				"Type:", "Type Value:", "Channel:", "BaseProduct:", "WeekDays:", "Region:"};
+
+		for (int i = 0; i < xpaths.length; i++) {
+			try {
+				Assert.assertTrue(isElementPresent(xpath(xpaths[i])));
+			} catch (AssertionError e) {
+				fail("Admin Promotion Code Add New: " + labels[i] + " label is not present");
+				resultcount++;
+			}
+			
+			try {
+				Assert.assertEquals(labels[i], getText(xpath(adminPromotionNew_Name)));
+			} catch (AssertionError e) {
+				fail("Admin Promotion Code Add New: Label is not equal to '" + labels[i] + "'");
+				resultcount++;
+			}
+		}
+
+		if (resultcount != 0) {
+			fail("Fail on testing of Promotion Code Form Labels");
+		} else {
+			pass("Successful on testing of Promotion Code Form Labels");
 		}
 		
 	}
@@ -212,4 +235,31 @@ String [] input;
 		}
 	}
 
+	public void testSearch() throws Exception {
+       String str = "";
+       type(xpath(adminPromotionsSearchTextField),input[1]);
+       click(xpath(adminPromotionsSearchButton));
+       waitForElementPresent(xpath(adminPromotionsSearchTextField));
+       try {
+           Assert.assertTrue(isElementPresent(xpath(result)));
+           str=driver.findElement(By.xpath(result)).getText();
+           if (str.equalsIgnoreCase(input[1]))
+           {
+               pass("Successful on searching");
+           } else {
+               fail("Result not match");
+               takeScreenshot();
+               resultcount++;
+           }
+       } catch (AssertionError e) {
+           if (input[2].equalsIgnoreCase("SUCCESS"))
+           {
+               pass("No result found");
+           } else {
+               fail("Should display no result");
+           }
+       }
+
+	}
+	
 }

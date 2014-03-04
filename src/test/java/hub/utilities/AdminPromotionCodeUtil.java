@@ -15,7 +15,7 @@ String [] input;
 	}
 	public AdminPromotionCodeUtil(String[] i) {
 		input = i;
-}
+	}
 	
 	public void navigateToPromoListPage() throws Exception{
 		Thread.sleep(1000);
@@ -27,11 +27,14 @@ String [] input;
 	
 	public void checkPromotionCodeForm(){
 		try {
+			click(xpath(adminPromotionListAddNewText));
 			waitForElementPresent(xpath(adminPromotionNew_HeaderText));
 			checkPromotionNewHeader();
+			checkPromotionNewButtons();
 			checkAddNewFormLabels();
+			testMandatoryFieldsValidaiton();
 			checkAddNewFormFields();
-			
+			fieldInputTest();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -205,6 +208,49 @@ String [] input;
 		
 	}
 	
+	public void testMandatoryFieldsValidaiton() throws InterruptedException, IOException{
+		click(xpath(adminPromotionNew_Save));
+		waitForElementPresent(xpath(adminPromotionNew_HeaderText));
+		
+		String xpaths[] = {adminPromotionNew_Input_Name, adminPromotionNew_Input_Description, adminPromotionNew_Input_CodePrefix, adminPromotionNew_Input_CodeNumber, 
+				adminPromotionNew_Input_chk_Multiplier, adminPromotionNew_Input_txtbox_Multiplier, adminPromotionNew_Input_chk_UserLimit, adminPromotionNew_Input_txtbox_UserLimit, 
+				adminPromotionNew_Input_StartDate, adminPromotionNew_Input_FinishDate, adminPromotionNew_Input_Status, adminPromotionNew_Input_Type, adminPromotionNew_Input_TypeValue, 
+				adminPromotionNew_Input_Channel, adminPromotionNew_Input_BaseProduct, adminPromotionNew_Input_chk_WeekDays_Sun, adminPromotionNew_Input_chk_WeekDays_Mon, 
+				adminPromotionNew_Input_chk_WeekDays_Tue, adminPromotionNew_Input_chk_WeekDays_Wed, adminPromotionNew_Input_chk_WeekDays_Thu, adminPromotionNew_Input_chk_WeekDays_Fri, 
+				adminPromotionNew_Input_chk_WeekDays_Sat, adminPromotionNew_Input_chk_Region_Act, adminPromotionNew_Input_chk_Region_Nt, adminPromotionNew_Input_chk_Region_Nsw, 
+				adminPromotionNew_Input_chk_Region_Qld, adminPromotionNew_Input_chk_Region_Sa, adminPromotionNew_Input_chk_Region_Tas, adminPromotionNew_Input_chk_Region_Vic, 
+				adminPromotionNew_Input_chk_Region_Wa};
+		
+		String errorMsgXpath[] = {adminPromotionNew_Input_Name, adminPromotionNew_Input_Description, adminPromotionNew_Input_CodePrefix, adminPromotionNew_Input_CodeNumber, 
+				adminPromotionNew_Input_chk_Multiplier, adminPromotionNew_Input_txtbox_Multiplier, adminPromotionNew_Input_chk_UserLimit, adminPromotionNew_Input_txtbox_UserLimit, 
+				adminPromotionNew_Input_StartDate, adminPromotionNew_Input_FinishDate, adminPromotionNew_Input_Status, adminPromotionNew_Input_Type, adminPromotionNew_Input_TypeValue, 
+				adminPromotionNew_Input_Channel, adminPromotionNew_Input_BaseProduct, adminPromotionNew_Input_chk_WeekDays_Sun, adminPromotionNew_Input_chk_WeekDays_Mon, 
+				adminPromotionNew_Input_chk_WeekDays_Tue, adminPromotionNew_Input_chk_WeekDays_Wed, adminPromotionNew_Input_chk_WeekDays_Thu, adminPromotionNew_Input_chk_WeekDays_Fri, 
+				adminPromotionNew_Input_chk_WeekDays_Sat, adminPromotionNew_Input_chk_Region_Act, adminPromotionNew_Input_chk_Region_Nt, adminPromotionNew_Input_chk_Region_Nsw, 
+				adminPromotionNew_Input_chk_Region_Qld, adminPromotionNew_Input_chk_Region_Sa, adminPromotionNew_Input_chk_Region_Tas, adminPromotionNew_Input_chk_Region_Vic, 
+				adminPromotionNew_Input_chk_Region_Wa};
+		
+		String inputFields[] = {"Name", "Description", "Code Prefix", "Code Number", "Checkbox Multiplier", "Textbox Multiplier", "Checkbox User Limit", "Textbox User Limit", 
+				"Start Date", "FinishDate", "Status", "Type", "Type Value", "Channel", "BaseProduct", "Checkbox WeekDays Sunday", "Checkbox WeekDays Monday", 
+				"Checkbox WeekDays Tuesday", "Checkbox WeekDays Wednesday", "Checkbox WeekDays Thursday", "Checkbox WeekDays Friday", 
+				"Checkbox WeekDays Saturday", "Checkbox Region ACT", "Checkbox Region NT", "Checkbox Region NSW", "Checkbox Region QLD", "Checkbox Region SA", 
+				"Checkbox Region TAS", "Checkbox Region VIC", "Checkbox Region WA"};
+		
+		for (int i = 0; i < xpaths.length; i++) {
+			String value = driver.findElement(By.xpath(xpaths[i])).getText();
+			
+			if (value.equals("")) {
+				String errorMsgValue = driver.findElement(By.xpath(errorMsgXpath[i])).getText();
+				
+				if (errorMsgValue != null && !errorMsgValue.equals("")) {
+					pass("Pass to display validation message in input fields "+inputFields[i]);
+				} else {
+					pass("Fail to display validation message in input fields "+inputFields[i]);
+				}
+			}
+		}
+	}
+	
 	public void checkAddNewFormFields(){
 		resultcount = 0;
 		String xpaths[] = {adminPromotionNew_Input_Name, adminPromotionNew_Input_Description, adminPromotionNew_Input_CodePrefix, adminPromotionNew_Input_CodeNumber, 
@@ -215,6 +261,7 @@ String [] input;
 				adminPromotionNew_Input_chk_WeekDays_Sat, adminPromotionNew_Input_chk_Region_Act, adminPromotionNew_Input_chk_Region_Nt, adminPromotionNew_Input_chk_Region_Nsw, 
 				adminPromotionNew_Input_chk_Region_Qld, adminPromotionNew_Input_chk_Region_Sa, adminPromotionNew_Input_chk_Region_Tas, adminPromotionNew_Input_chk_Region_Vic, 
 				adminPromotionNew_Input_chk_Region_Wa};
+		
 		String inputFields[] = {"Name", "Description", "Code Prefix", "Code Number", "Checkbox Multiplier", "Textbox Multiplier", "Checkbox User Limit", "Textbox User Limit", 
 				"Start Date", "FinishDate", "Status", "Type", "Type Value", "Channel", "BaseProduct", "Checkbox WeekDays Sunday", "Checkbox WeekDays Monday", 
 				"Checkbox WeekDays Tuesday", "Checkbox WeekDays Wednesday", "Checkbox WeekDays Thursday", "Checkbox WeekDays Friday", 
@@ -237,6 +284,97 @@ String [] input;
 			pass("Successful on testing of Promotion Code Form Input Fields");
 		}
 		
+	}
+	
+	public void fieldInputTest(){
+		//This String array is properly arranged base on the Test Data. You may encounter problem once this array is modify or re-arrange.
+		String xpaths[] = {adminPromotionNew_Input_Name, adminPromotionNew_Input_Description, adminPromotionNew_Input_CodePrefix, adminPromotionNew_Input_CodeNumber, 
+				adminPromotionNew_Input_chk_Multiplier, adminPromotionNew_Input_txtbox_Multiplier, adminPromotionNew_Input_chk_UserLimit, adminPromotionNew_Input_txtbox_UserLimit, 
+				adminPromotionNew_Input_StartDate, adminPromotionNew_Input_FinishDate, adminPromotionNew_Input_Status, adminPromotionNew_Input_Type, adminPromotionNew_Input_TypeValue, 
+				adminPromotionNew_Input_Channel, adminPromotionNew_Input_BaseProduct, adminPromotionNew_Input_chk_WeekDays_Sun, adminPromotionNew_Input_chk_WeekDays_Mon, 
+				adminPromotionNew_Input_chk_WeekDays_Tue, adminPromotionNew_Input_chk_WeekDays_Wed, adminPromotionNew_Input_chk_WeekDays_Thu, adminPromotionNew_Input_chk_WeekDays_Fri, 
+				adminPromotionNew_Input_chk_WeekDays_Sat, adminPromotionNew_Input_chk_Region_Act, adminPromotionNew_Input_chk_Region_Nt, adminPromotionNew_Input_chk_Region_Nsw, 
+				adminPromotionNew_Input_chk_Region_Qld, adminPromotionNew_Input_chk_Region_Sa, adminPromotionNew_Input_chk_Region_Tas, adminPromotionNew_Input_chk_Region_Vic, 
+				adminPromotionNew_Input_chk_Region_Wa};
+		
+		String inputFields[] = {"Name", "Description", "Code Prefix", "Code Number", "Checkbox Multiplier", "Multiplier Field", "Checkbox User Limit", "User Limit Field", 
+				"Start Date", "FinishDate", "Status", "Type", "Type Value", "Channel", "BaseProduct", "Checkbox WeekDays Sunday", "Checkbox WeekDays Monday", 
+				"Checkbox WeekDays Tuesday", "Checkbox WeekDays Wednesday", "Checkbox WeekDays Thursday", "Checkbox WeekDays Friday", 
+				"Checkbox WeekDays Saturday", "Checkbox Region ACT", "Checkbox Region NT", "Checkbox Region NSW", "Checkbox Region QLD", "Checkbox Region SA", 
+				"Checkbox Region TAS", "Checkbox Region VIC", "Checkbox Region WA"};
+		//Test Data starts at column 4 of adminPromotion.xls
+		int col= 4;
+	
+			for (int i = 0; i < xpaths.length; i++) {
+				//Get field type
+				String fieldType = "";
+				if (input[col] != null) {
+					fieldType = input[col].trim();
+				}
+				//Add 1 to move to field value
+				col = col + 1;
+				
+				String value = "";
+				if (input[col] != null) {
+					value = input[col].trim();
+				}
+				
+				try {
+					if (fieldType.equalsIgnoreCase("textbox")) {
+						
+						type(xpath(xpaths[i]), value);
+		
+					} else if (fieldType.equalsIgnoreCase("checkbox")) {
+						click(xpath(xpaths[i]));
+//						Assert.assertFalse(isElementVisible(xpath(baseProdConstructionLabel)));
+					} else if (fieldType.equalsIgnoreCase("calendar")) {
+						
+					} else if (fieldType.equalsIgnoreCase("dropdown")) {
+						select(xpath(xpaths[i]), value);
+					} else if (fieldType.equalsIgnoreCase("list")) {
+						
+					} else if (fieldType.equalsIgnoreCase("numeric")) {
+						//test if numeric field is accepting character value
+						boolean isPass = testNumericField(i, xpaths, inputFields);
+						if (isPass) {
+							type(xpath(xpaths[i]), value);
+						}
+						
+					}
+				} catch (Exception e) {
+					fail("Fail to enter input in " + inputFields[i]);
+				}
+				//Add another 1 to prepare for the next field
+				col = col + 1;
+			}
+
+	}
+	
+	public boolean testNumericField(int index, String[] xpaths, String[] inputFields) throws Exception {
+		boolean isPass = true;
+		type(xpath(xpaths[index]), "test");
+		String value = driver.findElement(By.xpath(xpaths[index])).getText();
+		
+		if (value.equals("")) {
+			pass(inputFields[index] + " is not accepting character values");
+			isPass = true;
+		} else {
+			fail(inputFields[index] + " is accepting character values");
+			isPass = false;
+		}
+		
+		type(xpath(xpaths[index]), "<>'*");
+		String value2 = driver.findElement(By.xpath(xpaths[index])).getText();
+		
+		if (value2.equals("")) {
+			pass(inputFields[index] + " is not accepting character values");
+			isPass = true;
+		} else {
+			fail(inputFields[index] + " is accepting character values");
+			isPass = false;
+		}
+		
+		return isPass;
 	}
 	
 	public void checkPromotionNewHeader() throws Exception{
@@ -289,6 +427,39 @@ String [] input;
 		}
 	}
 
+	public void checkPromotionNewButtons() throws Exception{
+		resultcount = 0;
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_Cancel)));
+			pass("Admin Promotion Code : Cancel Button is present");
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Cancel Button is not present");
+			resultcount++;
+		}
+
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_Save)));
+			pass("Admin Promotion Code : Save Button is present");
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Save Button is not present");
+			resultcount++;
+		}
+		
+		try {
+			Assert.assertTrue(isElementPresent(xpath(adminPromotionNew_Back)));
+			pass("Admin Promotion Code : Back Button is present");
+		} catch (AssertionError e) {
+			fail("Admin Promotion Code : Back Button is not present");
+			resultcount++;
+		}
+		
+		if (resultcount != 0) {
+			fail("Fail on testing of Buttons");
+		} else {
+			pass("Successful on testing of Buttons");
+		}
+	}
+	
 	public void testSearch() throws Exception {
        String str = "";
        type(xpath(adminPromotionsSearchTextField),input[1]);
@@ -313,7 +484,6 @@ String [] input;
                fail("Should display no result");
            }
        }
-
 	}
 	
 }

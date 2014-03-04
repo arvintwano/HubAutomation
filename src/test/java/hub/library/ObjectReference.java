@@ -374,6 +374,7 @@ public class ObjectReference {
     public static String adminPromotionNew_WeekDays = "";
     public static String adminPromotionNew_Region = "";
     
+    
   //Admin Promotion Code UI Add New Input fields
     public static String adminPromotionNew_Input_Name = "";
     public static String adminPromotionNew_Input_Description = "";
@@ -405,8 +406,11 @@ public class ObjectReference {
     public static String adminPromotionNew_Input_chk_Region_Tas = "";
     public static String adminPromotionNew_Input_chk_Region_Vic = "";
     public static String adminPromotionNew_Input_chk_Region_Wa = "";
-
     
+  //Admin Promotion Code UI Add New Buttons
+    public static String adminPromotionNew_Cancel = "";
+    public static String adminPromotionNew_Save = "";
+    public static String adminPromotionNew_Back = "";
 }
 
 

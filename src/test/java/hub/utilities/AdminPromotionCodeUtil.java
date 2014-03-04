@@ -36,7 +36,7 @@ String [] input;
 			checkAddNewFormFields();
 			fieldInputTest();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
+			fail("Fail to execute testing");
 			e.printStackTrace();
 		}
 		
@@ -210,6 +210,7 @@ String [] input;
 	
 	public void testMandatoryFieldsValidaiton() throws InterruptedException, IOException{
 		click(xpath(adminPromotionNew_Save));
+		Thread.sleep(1000);
 		waitForElementPresent(xpath(adminPromotionNew_HeaderText));
 		
 		String xpaths[] = {adminPromotionNew_Input_Name, adminPromotionNew_Input_Description, adminPromotionNew_Input_CodePrefix, adminPromotionNew_Input_CodeNumber, 
@@ -251,8 +252,9 @@ String [] input;
 		}
 	}
 	
-	public void checkAddNewFormFields(){
+	public void checkAddNewFormFields() throws InterruptedException{
 		resultcount = 0;
+		Thread.sleep(1000);
 		String xpaths[] = {adminPromotionNew_Input_Name, adminPromotionNew_Input_Description, adminPromotionNew_Input_CodePrefix, adminPromotionNew_Input_CodeNumber, 
 				adminPromotionNew_Input_chk_Multiplier, adminPromotionNew_Input_txtbox_Multiplier, adminPromotionNew_Input_chk_UserLimit, adminPromotionNew_Input_txtbox_UserLimit, 
 				adminPromotionNew_Input_StartDate, adminPromotionNew_Input_FinishDate, adminPromotionNew_Input_Status, adminPromotionNew_Input_Type, adminPromotionNew_Input_TypeValue, 
@@ -335,7 +337,7 @@ String [] input;
 						
 					} else if (fieldType.equalsIgnoreCase("numeric")) {
 						//test if numeric field is accepting character value
-						boolean isPass = testNumericField(i, xpaths, inputFields);
+						boolean isPass = testNumericField(i, xpaths, inputFields, value);
 						if (isPass) {
 							type(xpath(xpaths[i]), value);
 						}
@@ -347,12 +349,13 @@ String [] input;
 				//Add another 1 to prepare for the next field
 				col = col + 1;
 			}
-
+			
 	}
 	
-	public boolean testNumericField(int index, String[] xpaths, String[] inputFields) throws Exception {
+	public boolean testNumericField(int index, String[] xpaths, String[] inputFields, String val) throws Exception {
 		boolean isPass = true;
 		type(xpath(xpaths[index]), "test");
+		
 		String value = driver.findElement(By.xpath(xpaths[index])).getText();
 		
 		if (value.equals("")) {
@@ -372,6 +375,30 @@ String [] input;
 		} else {
 			fail(inputFields[index] + " is accepting character values");
 			isPass = false;
+		}
+		
+		//This is to test the maximum input length of a field 
+		String [] strArr = val.split("_");
+		int maxLength = 0;
+		
+		if (strArr[0] != null && strArr[0].equals("")) {
+			maxLength = Integer.parseInt(strArr[0].trim());
+		}
+		
+		String testInput = "";
+		for (int i = 0; i < maxLength + 1; i++) {
+			testInput += String.valueOf(i);
+		}
+		
+		type(xpath(xpaths[index]), testInput);
+		String str = driver.findElement(By.xpath(xpaths[index])).getText();
+		//Final test
+		if (str.length() > maxLength) {
+			fail(inputFields[index] + " is accepting more than " + maxLength + " digits");
+			isPass = false;
+		} else {
+			pass(inputFields[index] + " is not accepting more than " + maxLength + " digits");
+			isPass = true;
 		}
 		
 		return isPass;

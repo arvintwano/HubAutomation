@@ -110,7 +110,7 @@ public class SmokeTest extends TestInitReference {
 	@DataProvider(name = "Data-Provider-Function")
 	public Object[][] parameterIntTestProvider() throws IOException {
 		Object[][] data = null; 
-		ReadXlsData rxd = new ReadXlsData("src/test/java/hub/library/smokeTestStage.xls");
+		ReadXlsData rxd = new ReadXlsData("src/test/java/hub/library/smokeTestProd.xls");
 		data = rxd.getData();
 		return data;
 	}

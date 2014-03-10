@@ -23,6 +23,7 @@ public class AdminPromotionCodeTest extends TestInitReference {
 			this.admPromoCodeUtil = new AdminPromotionCodeUtil(input);
 			this.admPromoCodeUtil.checkPromotionListHeader();
 			this.admPromoCodeUtil.checkAttributes();
+			this.admPromoCodeUtil.checkPromotionCodeForm();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -221,20 +221,20 @@ String [] input;
 				adminPromotionNew_StartDate, adminPromotionNew_FinishDate, adminPromotionNew_Status, adminPromotionNew_Type, adminPromotionNew_TypeValue, adminPromotionNew_Channel, adminPromotionNew_BaseProduct, 
 				adminPromotionNew_WeekDays, adminPromotionNew_Region};
 		
-		String labels[] = {"* Name:","* Description:","* Code Prefix:", "* Code Number:", "* Multiplier:", "* UserLimit:", "* Start Date:", "* Finish Date:", "* Status:", 
-				"Type:", "Type Value:", "Channel:", "BaseProduct:", "WeekDays:", "Region:"};
+		String labels[] = {"* Name:","* Description:","* Code Prefix:", "* Code Number:", "* Code Multiplier:", "* User Limit:", "* Start Date:", "* End Date:", "* Status:", 
+				"* Type:", "* Type Value:", "* Channel:", "* Base Product:", "* Weekdays:", "* Region:"};
 
 		for (int i = 0; i < xpaths.length; i++) {
 			try {
 				Assert.assertTrue(isElementPresent(xpath(xpaths[i])));
-				fail("Admin Promotion Code Add New: " + labels[i] + " label is present");
+				pass("Admin Promotion Code Add New: " + labels[i] + " label is present");
 			} catch (AssertionError e) {
 				fail("Admin Promotion Code Add New: " + labels[i] + " label is not present");
 				resultcount++;
 			}
 			
 			try {
-				Assert.assertEquals(labels[i], getText(xpath(adminPromotionNew_Name)));
+				Assert.assertEquals(labels[i], getText(xpath(xpaths[i])));
 				pass("Admin Promotion Code Add New: Label is equal to '" + labels[i] + "'");
 			} catch (AssertionError e) {
 				fail("Admin Promotion Code Add New: Label is not equal to '" + labels[i] + "'");
@@ -264,14 +264,14 @@ String [] input;
 				adminPromotionNew_Input_chk_Region_Qld, adminPromotionNew_Input_chk_Region_Sa, adminPromotionNew_Input_chk_Region_Tas, adminPromotionNew_Input_chk_Region_Vic, 
 				adminPromotionNew_Input_chk_Region_Wa};
 		
-		String errorMsgXpath[] = {adminPromotionNew_Input_Name, adminPromotionNew_Input_Description, adminPromotionNew_Input_CodePrefix, adminPromotionNew_Input_CodeNumber, 
-				adminPromotionNew_Input_chk_Multiplier, adminPromotionNew_Input_txtbox_Multiplier, adminPromotionNew_Input_chk_UserLimit, adminPromotionNew_Input_txtbox_UserLimit, 
-				adminPromotionNew_Input_StartDate, adminPromotionNew_Input_FinishDate, adminPromotionNew_Input_Status, adminPromotionNew_Input_Type, adminPromotionNew_Input_TypeValue, 
-				adminPromotionNew_Input_Channel, adminPromotionNew_Input_BaseProduct, adminPromotionNew_Input_chk_WeekDays_Sun, adminPromotionNew_Input_chk_WeekDays_Mon, 
-				adminPromotionNew_Input_chk_WeekDays_Tue, adminPromotionNew_Input_chk_WeekDays_Wed, adminPromotionNew_Input_chk_WeekDays_Thu, adminPromotionNew_Input_chk_WeekDays_Fri, 
-				adminPromotionNew_Input_chk_WeekDays_Sat, adminPromotionNew_Input_chk_Region_Act, adminPromotionNew_Input_chk_Region_Nt, adminPromotionNew_Input_chk_Region_Nsw, 
-				adminPromotionNew_Input_chk_Region_Qld, adminPromotionNew_Input_chk_Region_Sa, adminPromotionNew_Input_chk_Region_Tas, adminPromotionNew_Input_chk_Region_Vic, 
-				adminPromotionNew_Input_chk_Region_Wa};
+		String errorMsgXpath[] = {"Name field should not be empty.@@textbox", "Description field should not be empty.@@textbox", "Code Prefix field should not be empty.@@textbox", "Code Number field should not be empty.@@textbox", 
+				"Code Multiplier field should not be empty.@@checkbox", "Code Multiplier field should not be empty.@@textbox", "User Limit field should not be empty.@@checkbox", "User Limit field should not be empty.@@textbox", 
+				"Start Date field should not be empty.@@textbox", "End Date field should not be empty.@@textbox", "dp@@dropdown", "dp@@dropdown", "Type Value field should not be empty.@@textbox", 
+				"dp@@dropdown", "Base Product field should not be empty.@@select", "Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxdays", 
+				"Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxdays", 
+				"Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxregion", "Please select atleast one.@@checkboxregion", "Please select atleast one.@@checkboxregion", 
+				"Please select atleast one.@@checkboxregion", "Please select atleast one.@@checkboxregion", "Please select atleast one.@@checkboxregion", "Please select atleast one.@@checkboxregion", 
+				"Please select atleast one.@@checkboxregion"};
 		
 		String inputFields[] = {"Name", "Description", "Code Prefix", "Code Number", "Checkbox Multiplier", "Textbox Multiplier", "Checkbox User Limit", "Textbox User Limit", 
 				"Start Date", "FinishDate", "Status", "Type", "Type Value", "Channel", "BaseProduct", "Checkbox WeekDays Sunday", "Checkbox WeekDays Monday", 
@@ -279,17 +279,86 @@ String [] input;
 				"Checkbox WeekDays Saturday", "Checkbox Region ACT", "Checkbox Region NT", "Checkbox Region NSW", "Checkbox Region QLD", "Checkbox Region SA", 
 				"Checkbox Region TAS", "Checkbox Region VIC", "Checkbox Region WA"};
 		
+		boolean isDaysErrMsgShouldDisplay = true;
+		boolean isRegionErrMsgShouldDisplay = true;
+		String daysErrMsg = "";
+		String regionErrMsg = "";
+		
+		
 		for (int i = 0; i < xpaths.length; i++) {
-			String value = driver.findElement(By.xpath(xpaths[i])).getText();
+			String[] errMsg = errorMsgXpath[i].split("@@");
+			String fieldType = errMsg[1].trim(); 
 			
-			if (value.equals("")) {
-				String errorMsgValue = driver.findElement(By.xpath(errorMsgXpath[i])).getText();
+			By byXpath = xpath(xpaths[i]);
+			if (fieldType.equalsIgnoreCase("checkboxdays")) {
+
+				boolean isChecked = Boolean.parseBoolean(getValue(byXpath, "checked"));
 				
-				if (errorMsgValue != null && !errorMsgValue.equals("")) {
-					pass("Pass to display validation message in input fields "+inputFields[i]);
+				if (isChecked) {
+					isDaysErrMsgShouldDisplay = false;
 				} else {
-					pass("Fail to display validation message in input fields "+inputFields[i]);
+					daysErrMsg = getText(xpath(adminPromotionNew_WeekdaysErrMsg));
 				}
+				
+			} else if (fieldType.equalsIgnoreCase("checkboxregion")) { 
+				
+				boolean isChecked = Boolean.parseBoolean(getValue(byXpath, "checked"));
+				
+				if (isChecked) {
+					isRegionErrMsgShouldDisplay = false;
+				} else {
+					regionErrMsg = getText(xpath(adminPromotionNew_RegionErrMsg));
+				}
+			
+			} else if (fieldType.equalsIgnoreCase("textbox")) {
+				String value = driver.findElement(By.xpath(xpaths[i])).getText();
+				
+				if (value.equals("")) {
+
+//					String label = getText(xpath("(//*[@id='errorMessage']/label)["+ (i) +"]"));
+					String errorMsgValue = getText(xpath("(//*[@id='errorMessage'])["+ (i+1) +"]"));
+					
+					if (errMsg[0].equals("User Limit field should not be empty.")) {
+						errorMsgValue = getText(xpath(adminPromotionNew_UserLimitErrMsg));
+					} else if (errMsg[0].equals("Code Multiplier field should not be empty.")) {
+						errorMsgValue = getText(xpath(adminPromotionNew_CodeMultiErrMsg));
+					}
+					
+					if (errorMsgValue.equals(errMsg[0])) {
+						pass("Pass to display correct validation message in input fields "+inputFields[i]);
+					} else {
+						fail("Fail to display correct validation message in input fields "+inputFields[i]);
+					}
+				}
+			} else if (fieldType.equalsIgnoreCase("select")) {
+				boolean hasSelected = Boolean.parseBoolean(getValue(byXpath, "checked"));
+				if (!hasSelected) {
+					String err = getText(xpath(adminPromotionNew_BaseProdErrMsg));
+					
+					if (err.equals(errMsg[0])) {
+						pass("Pass to display correct validation message in input fields "+inputFields[i]);
+					} else {
+						fail("Fail to display correct validation message in input fields "+inputFields[i]);
+					}
+					
+				} 
+			}
+
+		}
+		
+		if (isDaysErrMsgShouldDisplay) {
+			if (daysErrMsg.equals("Please select atleast one.")) {
+				pass("Pass to display correct validation message in input fields Weekdays");
+			} else {
+				fail("Fail to display correct validation message in input fields Weekdays");
+			}
+		}
+		
+		if (isRegionErrMsgShouldDisplay) {
+			if (regionErrMsg.equals("Please select atleast one.")) {
+				pass("Pass to display correct validation message in input fields Region");
+			} else {
+				fail("Fail to display correct validation message in input fields Region");
 			}
 		}
 	}
@@ -390,6 +459,7 @@ String [] input;
 				}
 				//Add another 1 to prepare for the next field
 				col = col + 1;
+				pass("Success in filling of " + inputFields[i]);
 			}
 			
 	}

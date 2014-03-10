@@ -445,6 +445,16 @@ public class FunctionReference extends Results {
         return value;
     }
     
+    public String getValue(By by, String attribute) {
+        String value = "";
+        if (isElementPresent(by)) {
+            if (driver.findElement(by).getAttribute(attribute) != null) {
+                value = driver.findElement(by).getAttribute(attribute);
+            }
+        }
+        return value;
+    }
+    
     public String getChecked(By by) {
         String value = "";
         if (isElementPresent(by)) {

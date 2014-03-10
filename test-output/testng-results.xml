@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="799143" started-at="2014-02-28T11:11:36Z" finished-at="2014-02-28T11:24:55Z">
+  <suite name="Default suite" duration-ms="117904" started-at="2014-03-10T11:35:29Z" finished-at="2014-03-10T11:37:27Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="799143" started-at="2014-02-28T11:11:36Z" finished-at="2014-02-28T11:24:55Z">
-      <class name="hub.test.SmokeTest">
-        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.SmokeTest@59e428b2]" name="Startup" is-config="true" duration-ms="43476" started-at="2014-02-28T19:11:36Z" finished-at="2014-02-28T19:12:19Z">
+    <test name="Default test" duration-ms="117904" started-at="2014-03-10T11:35:29Z" finished-at="2014-03-10T11:37:27Z">
+      <class name="hub.test.AdminPromotionCodeTest">
+        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="Startup" is-config="true" duration-ms="47864" started-at="2014-03-10T19:35:29Z" finished-at="2014-03-10T19:36:17Z">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,7 +16,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Startup -->
-        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@59e428b2]" name="testSmokeTest" duration-ms="147134" started-at="2014-02-28T19:12:20Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-28T19:14:47Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="5239" started-at="2014-03-10T19:36:17Z" finished-at="2014-03-10T19:36:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="12504" started-at="2014-03-10T19:36:22Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-10T19:36:35Z">
           <params>
             <param index="0">
               <value>
@@ -25,18 +29,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@6e75eb9a]]>
+                <![CDATA[[Ljava.lang.String;@32b9802e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@59e428b2]" name="reinitializeBrowser" is-config="true" duration-ms="4461" started-at="2014-02-28T19:14:47Z" finished-at="2014-02-28T19:14:51Z">
+        </test-method> <!-- promotionTest -->
+        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="4245" started-at="2014-03-10T19:36:35Z" finished-at="2014-03-10T19:36:39Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- reinitializeBrowser -->
-        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@59e428b2]" name="testSmokeTest" duration-ms="285481" started-at="2014-02-28T19:14:51Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-28T19:19:37Z">
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="14824" started-at="2014-03-10T19:36:39Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-10T19:36:54Z">
           <params>
             <param index="0">
               <value>
@@ -45,18 +49,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@7fbf041d]]>
+                <![CDATA[[Ljava.lang.String;@308e6606]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@59e428b2]" name="reinitializeBrowser" is-config="true" duration-ms="6495" started-at="2014-02-28T19:19:37Z" finished-at="2014-02-28T19:19:43Z">
+        </test-method> <!-- promotionTest -->
+        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="3837" started-at="2014-03-10T19:36:54Z" finished-at="2014-03-10T19:36:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- reinitializeBrowser -->
-        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@59e428b2]" name="testSmokeTest" duration-ms="247850" started-at="2014-02-28T19:19:43Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-28T19:23:51Z">
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="12918" started-at="2014-03-10T19:36:58Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-10T19:37:11Z">
           <params>
             <param index="0">
               <value>
@@ -65,18 +69,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@55a74d70]]>
+                <![CDATA[[Ljava.lang.String;@54cc2cd1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@59e428b2]" name="reinitializeBrowser" is-config="true" duration-ms="4473" started-at="2014-02-28T19:23:51Z" finished-at="2014-02-28T19:23:56Z">
+        </test-method> <!-- promotionTest -->
+        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="4129" started-at="2014-03-10T19:37:11Z" finished-at="2014-03-10T19:37:15Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- reinitializeBrowser -->
-        <test-method status="PASS" signature="testSmokeTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.SmokeTest@59e428b2]" name="testSmokeTest" duration-ms="52696" started-at="2014-02-28T19:23:56Z" description="Smoke Test" data-provider="Data-Provider-Function" finished-at="2014-02-28T19:24:48Z">
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="11880" started-at="2014-03-10T19:37:15Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-10T19:37:27Z">
           <params>
             <param index="0">
               <value>
@@ -85,22 +89,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@5acd1ffe]]>
+                <![CDATA[[Ljava.lang.String;@289278d5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testSmokeTest -->
-        <test-method status="PASS" signature="reinitializeBrowser()[pri:0, instance:hub.test.SmokeTest@59e428b2]" name="reinitializeBrowser" is-config="true" duration-ms="6546" started-at="2014-02-28T19:24:48Z" finished-at="2014-02-28T19:24:55Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- reinitializeBrowser -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.SmokeTest@59e428b2]" name="teardown" is-config="true" duration-ms="192" started-at="2014-02-28T19:24:55Z" finished-at="2014-02-28T19:24:55Z">
+        </test-method> <!-- promotionTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="teardown" is-config="true" duration-ms="166" started-at="2014-03-10T19:37:27Z" finished-at="2014-03-10T19:37:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- hub.test.SmokeTest -->
+      </class> <!-- hub.test.AdminPromotionCodeTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

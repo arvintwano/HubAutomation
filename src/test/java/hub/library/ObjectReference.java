@@ -352,72 +352,73 @@ public class ObjectReference {
     public static String result = "//*[@id='adminPromotionListContainer']/table[1]/tbody/tr[3]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/span";
     
    //Admin Promotion Code UI Add New Header
-    public static String adminPromotionNew_HeaderText = "";
+    public static String adminPromotionNew_HeaderText = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr/td[1]/span/a";
     public static String adminPromotionNew_ShowHistoryText = "";
-    public static String adminPromotionNew_HelpLink = "";
-    public static String adminPromotionNew_HelpIcon = "";
- 
+    public static String adminPromotionNew_HelpLink = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr/td/table/tbody/tr/td[5]/a";
+    public static String adminPromotionNew_HelpIcon = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[2]/table/tbody/tr/td/table/tbody/tr/td[3]/img";
+    public static String adminPromotionNew_BaseProdLabel = "//*[@id='base-product-mail-label']";
+    
   //Admin Promotion Code UI Add New Label
-    public static String adminPromotionNew_Name = "";
-    public static String adminPromotionNew_Description = "";
-    public static String adminPromotionNew_CodePrefix = "";
-    public static String adminPromotionNew_CodeNumber = "";
-    public static String adminPromotionNew_Multiplier = "";
-    public static String adminPromotionNew_UserLimit = "";
-    public static String adminPromotionNew_StartDate = "";
-    public static String adminPromotionNew_FinishDate = "";
-    public static String adminPromotionNew_Status = "";
-    public static String adminPromotionNew_Type = "";
-    public static String adminPromotionNew_TypeValue = "";
-    public static String adminPromotionNew_Channel = "";
-    public static String adminPromotionNew_BaseProduct = "";
-    public static String adminPromotionNew_WeekDays = "";
-    public static String adminPromotionNew_Region = "";
+    public static String adminPromotionNew_Name = "//*[@id='addPromotionForm']/tbody/tr[1]/td[1]/label";
+    public static String adminPromotionNew_Description = "//*[@id='addPromotionForm']/tbody/tr[3]/td[1]/label";
+    public static String adminPromotionNew_CodePrefix = "//*[@id='addPromotionForm']/tbody/tr[5]/td[1]/label";
+    public static String adminPromotionNew_CodeNumber = "//*[@id='addPromotionForm']/tbody/tr[7]/td[1]/label";
+    public static String adminPromotionNew_Multiplier = "//*[@id='addPromotionForm']/tbody/tr[9]/td[1]/label";
+    public static String adminPromotionNew_UserLimit = "//*[@id='addPromotionForm']/tbody/tr[13]/td[1]/label";
+    public static String adminPromotionNew_StartDate = "//*[@id='addPromotionForm']/tbody/tr[17]/td[1]/label";
+    public static String adminPromotionNew_FinishDate = "//*[@id='addPromotionForm']/tbody/tr[19]/td[1]/label";
+    public static String adminPromotionNew_Status = "//*[@id='addPromotionForm']/tbody/tr[21]/td[1]/label";
+    public static String adminPromotionNew_Type = "//*[@id='addPromotionForm']/tbody/tr[23]/td[1]/label";
+    public static String adminPromotionNew_TypeValue = "//*[@id='addPromotionForm']/tbody/tr[25]/td[1]/label";
+    public static String adminPromotionNew_Channel = "//*[@id='addPromotionForm']/tbody/tr[27]/td[1]/label";
+    public static String adminPromotionNew_BaseProduct = "//*[@id='addPromotionForm']/tbody/tr[29]/td[1]/label";
+    public static String adminPromotionNew_WeekDays = "//*[@id='addPromotionForm']/tbody/tr[31]/td[1]/label";
+    public static String adminPromotionNew_Region = "//*[@id='addPromotionForm']/tbody/tr[33]/td[1]/label";
     
     
   //Admin Promotion Code UI Add New Input fields
-    public static String adminPromotionNew_Input_Name = "";
-    public static String adminPromotionNew_Input_Description = "";
-    public static String adminPromotionNew_Input_CodePrefix = "";
-    public static String adminPromotionNew_Input_CodeNumber = "";
-    public static String adminPromotionNew_Input_chk_Multiplier = "";
-    public static String adminPromotionNew_Input_txtbox_Multiplier = "";
-    public static String adminPromotionNew_Input_chk_UserLimit = "";
-    public static String adminPromotionNew_Input_txtbox_UserLimit = "";
-    public static String adminPromotionNew_Input_StartDate = "";
-    public static String adminPromotionNew_Input_FinishDate = "";
-    public static String adminPromotionNew_Input_Status = "";
-    public static String adminPromotionNew_Input_Type = "";
-    public static String adminPromotionNew_Input_TypeValue = "";
-    public static String adminPromotionNew_Input_Channel = "";
-    public static String adminPromotionNew_Input_BaseProduct = "";
-    public static String adminPromotionNew_Input_chk_WeekDays_Sun = "";
-    public static String adminPromotionNew_Input_chk_WeekDays_Mon = "";
-    public static String adminPromotionNew_Input_chk_WeekDays_Tue = "";
-    public static String adminPromotionNew_Input_chk_WeekDays_Wed = "";
-    public static String adminPromotionNew_Input_chk_WeekDays_Thu = "";
-    public static String adminPromotionNew_Input_chk_WeekDays_Fri = "";
-    public static String adminPromotionNew_Input_chk_WeekDays_Sat = "";
-    public static String adminPromotionNew_Input_chk_Region_Act = "";
-    public static String adminPromotionNew_Input_chk_Region_Nt = "";
-    public static String adminPromotionNew_Input_chk_Region_Nsw = "";
-    public static String adminPromotionNew_Input_chk_Region_Qld = "";
-    public static String adminPromotionNew_Input_chk_Region_Sa = "";
-    public static String adminPromotionNew_Input_chk_Region_Tas = "";
-    public static String adminPromotionNew_Input_chk_Region_Vic = "";
-    public static String adminPromotionNew_Input_chk_Region_Wa = "";
+    public static String adminPromotionNew_Input_Name = "//*[@id='promotionName']";
+    public static String adminPromotionNew_Input_Description = "//*[@id='description']";
+    public static String adminPromotionNew_Input_CodePrefix = "//*[@id='codePrefix']";
+    public static String adminPromotionNew_Input_CodeNumber = "//*[@id='codeNumber']";
+    public static String adminPromotionNew_Input_chk_Multiplier = "//*[@id='isCodeMultiplier']";
+    public static String adminPromotionNew_Input_txtbox_Multiplier = "//*[@id='codeMultiplier']";
+    public static String adminPromotionNew_Input_chk_UserLimit = "//*[@id='isUserLimit']";
+    public static String adminPromotionNew_Input_txtbox_UserLimit = "//*[@id='userLimit']";
+    public static String adminPromotionNew_Input_StartDate = "//*[@id='startDate']";
+    public static String adminPromotionNew_Input_FinishDate = "//*[@id='endDate']";
+    public static String adminPromotionNew_Input_Status = "//*[@id='status']";
+    public static String adminPromotionNew_Input_Type = "//*[@id='type']";
+    public static String adminPromotionNew_Input_TypeValue = "//*[@id='typeValue']";
+    public static String adminPromotionNew_Input_Channel = "//*[@id='channelId']";
+    public static String adminPromotionNew_Input_BaseProduct = "//*[@id='baseProductId']";
+    public static String adminPromotionNew_Input_chk_WeekDays_Sun = "(//*[@id='promotionDays'])[1]";
+    public static String adminPromotionNew_Input_chk_WeekDays_Mon = "(//*[@id='promotionDays'])[2]";
+    public static String adminPromotionNew_Input_chk_WeekDays_Tue = "(//*[@id='promotionDays'])[3]";
+    public static String adminPromotionNew_Input_chk_WeekDays_Wed = "(//*[@id='promotionDays'])[4]";
+    public static String adminPromotionNew_Input_chk_WeekDays_Thu = "(//*[@id='promotionDays'])[5]";
+    public static String adminPromotionNew_Input_chk_WeekDays_Fri = "(//*[@id='promotionDays'])[6]";
+    public static String adminPromotionNew_Input_chk_WeekDays_Sat = "(//*[@id='promotionDays'])[7]";
+    public static String adminPromotionNew_Input_chk_Region_Act = "(//*[@id='promotionRegions'])[1]";
+    public static String adminPromotionNew_Input_chk_Region_Nt = "(//*[@id='promotionRegions'])[2]";
+    public static String adminPromotionNew_Input_chk_Region_Nsw = "(//*[@id='promotionRegions'])[3]";
+    public static String adminPromotionNew_Input_chk_Region_Qld = "(//*[@id='promotionRegions'])[4]";
+    public static String adminPromotionNew_Input_chk_Region_Sa = "(//*[@id='promotionRegions'])[5]";
+    public static String adminPromotionNew_Input_chk_Region_Tas = "(//*[@id='promotionRegions'])[6]";
+    public static String adminPromotionNew_Input_chk_Region_Vic = "(//*[@id='promotionRegions'])[7]";
+    public static String adminPromotionNew_Input_chk_Region_Wa = "(//*[@id='promotionRegions'])[8]";
     
   //Admin Promotion Code UI Add New Buttons
-    public static String adminPromotionNew_Cancel = "";
-    public static String adminPromotionNew_Save = "";
-    public static String adminPromotionNew_Back = "";
+    public static String adminPromotionNew_Cancel = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/div/table[2]/tbody/tr/td[1]/div/div";
+    public static String adminPromotionNew_Save = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/div/table[2]/tbody/tr/td[3]/div/div";
+    public static String adminPromotionNew_Back = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/div/table[2]/tbody/tr/td[4]/div/div";
     
   //Admin Promotion Code UI Add New Horizontal Lines
-    public static String adminPromotionNew_HorizontalLine1 = "";
-    public static String adminPromotionNew_HorizontalLine2 = "";
-    public static String adminPromotionNew_HorizontalLine3 = "";
-    public static String adminPromotionNew_HorizontalLine4 = "";
-    public static String adminPromotionNew_HorizontalLine5 = "";
+    public static String adminPromotionNew_HorizontalLine1 = "//*[@id='addPromotionForm']/tbody/tr[4]/td/hr";
+    public static String adminPromotionNew_HorizontalLine2 = "//*[@id='addPromotionForm']/tbody/tr[16]/td/hr";
+    public static String adminPromotionNew_HorizontalLine3 = "//*[@id='addPromotionForm']/tbody/tr[26]/td/hr";
+    public static String adminPromotionNew_HorizontalLine4 = "//*[@id='addPromotionForm']/tbody/tr[30]/td/hr";
+    public static String adminPromotionNew_HorizontalLine5 = "//*[@id='addPromotionForm']/tbody/tr[32]/td/hr";
 }
 
 

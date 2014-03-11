@@ -64,13 +64,13 @@ public class ReadXlsData {
 				String value = "";
 				switch(cell.getCellType()) {  
 				
-//					case HSSFCell.CELL_TYPE_NUMERIC:
-//						Double cellValue = cell.getNumericCellValue();
-//						value = cellValue.toString();
-//						break;  
-//					case HSSFCell.CELL_TYPE_BOOLEAN:  
-//						value = Boolean.toString(cell.getBooleanCellValue());  
-//						break;  
+					case HSSFCell.CELL_TYPE_NUMERIC:
+						Double cellValue = cell.getNumericCellValue();
+						value = cellValue.toString();
+						break;  
+					case HSSFCell.CELL_TYPE_BOOLEAN:  
+						value = Boolean.toString(cell.getBooleanCellValue());  
+						break;  
 					case HSSFCell.CELL_TYPE_BLANK:  
 					    value = "";  
 					    break;  

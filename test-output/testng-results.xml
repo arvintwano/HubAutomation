@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="117904" started-at="2014-03-10T11:35:29Z" finished-at="2014-03-10T11:37:27Z">
+  <suite name="Default suite" duration-ms="191416" started-at="2014-03-11T05:32:38Z" finished-at="2014-03-11T05:35:50Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="117904" started-at="2014-03-10T11:35:29Z" finished-at="2014-03-10T11:37:27Z">
+    <test name="Default test" duration-ms="191416" started-at="2014-03-11T05:32:38Z" finished-at="2014-03-11T05:35:50Z">
       <class name="hub.test.AdminPromotionCodeTest">
-        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="Startup" is-config="true" duration-ms="47864" started-at="2014-03-10T19:35:29Z" finished-at="2014-03-10T19:36:17Z">
+        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="Startup" is-config="true" duration-ms="112574" started-at="2014-03-11T13:32:38Z" finished-at="2014-03-11T13:34:31Z">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,11 +16,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Startup -->
-        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="5239" started-at="2014-03-10T19:36:17Z" finished-at="2014-03-10T19:36:22Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="4049" started-at="2014-03-11T13:34:31Z" finished-at="2014-03-11T13:34:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="12504" started-at="2014-03-10T19:36:22Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-10T19:36:35Z">
+        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="14177" started-at="2014-03-11T13:34:35Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-11T13:34:49Z">
           <params>
             <param index="0">
               <value>
@@ -29,18 +29,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@32b9802e]]>
+                <![CDATA[[Ljava.lang.String;@29a9b1ec]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- promotionTest -->
-        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="4245" started-at="2014-03-10T19:36:35Z" finished-at="2014-03-10T19:36:39Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="7535" started-at="2014-03-11T13:34:49Z" finished-at="2014-03-11T13:34:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="14824" started-at="2014-03-10T19:36:39Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-10T19:36:54Z">
+        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="14595" started-at="2014-03-11T13:34:57Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-11T13:35:11Z">
           <params>
             <param index="0">
               <value>
@@ -49,18 +49,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@308e6606]]>
+                <![CDATA[[Ljava.lang.String;@43e01252]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- promotionTest -->
-        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="3837" started-at="2014-03-10T19:36:54Z" finished-at="2014-03-10T19:36:58Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="4671" started-at="2014-03-11T13:35:11Z" finished-at="2014-03-11T13:35:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="12918" started-at="2014-03-10T19:36:58Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-10T19:37:11Z">
+        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="14718" started-at="2014-03-11T13:35:16Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-11T13:35:31Z">
           <params>
             <param index="0">
               <value>
@@ -69,18 +69,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@54cc2cd1]]>
+                <![CDATA[[Ljava.lang.String;@2bd2e84e]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- promotionTest -->
-        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="4129" started-at="2014-03-10T19:37:11Z" finished-at="2014-03-10T19:37:15Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="login" is-config="true" duration-ms="3704" started-at="2014-03-11T13:35:31Z" finished-at="2014-03-11T13:35:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="11880" started-at="2014-03-10T19:37:15Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-10T19:37:27Z">
+        <test-method status="PASS" signature="promotionTest(java.lang.Class, [Ljava.lang.String;)[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="promotionTest" duration-ms="14978" started-at="2014-03-11T13:35:34Z" description="Admin Promotion Code Test" data-provider="Data-Provider-Function" finished-at="2014-03-11T13:35:49Z">
           <params>
             <param index="0">
               <value>
@@ -89,14 +89,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[[Ljava.lang.String;@289278d5]]>
+                <![CDATA[[Ljava.lang.String;@23916f5c]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- promotionTest -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="teardown" is-config="true" duration-ms="166" started-at="2014-03-10T19:37:27Z" finished-at="2014-03-10T19:37:27Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:hub.test.AdminPromotionCodeTest@77e64656]" name="teardown" is-config="true" duration-ms="157" started-at="2014-03-11T13:35:49Z" finished-at="2014-03-11T13:35:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

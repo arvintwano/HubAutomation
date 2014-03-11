@@ -5,6 +5,7 @@ import static org.openqa.selenium.By.xpath;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import hub.library.FunctionReference;
@@ -222,7 +223,7 @@ String [] input;
 				adminPromotionNew_WeekDays, adminPromotionNew_Region};
 		
 		String labels[] = {"* Name:","* Description:","* Code Prefix:", "* Code Number:", "* Code Multiplier:", "* User Limit:", "* Start Date:", "* End Date:", "* Status:", 
-				"* Type:", "* Type Value:", "* Channel:", "* Base Product:", "* Weekdays:", "* Region:"};
+				"* Type:", "* Type Value:", "* Channel:", "* Base Product:", "* Weekdays:", "* Regions:"};
 
 		for (int i = 0; i < xpaths.length; i++) {
 			try {
@@ -267,7 +268,7 @@ String [] input;
 		String errorMsgXpath[] = {"Name field should not be empty.@@textbox", "Description field should not be empty.@@textbox", "Code Prefix field should not be empty.@@textbox", "Code Number field should not be empty.@@textbox", 
 				"Code Multiplier field should not be empty.@@checkbox", "Code Multiplier field should not be empty.@@textbox", "User Limit field should not be empty.@@checkbox", "User Limit field should not be empty.@@textbox", 
 				"Start Date field should not be empty.@@textbox", "End Date field should not be empty.@@textbox", "dp@@dropdown", "dp@@dropdown", "Type Value field should not be empty.@@textbox", 
-				"dp@@dropdown", "Base Product field should not be empty.@@select", "Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxdays", 
+				"dp@@dropdown", "Please select atleast one.@@select", "Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxdays", 
 				"Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxdays", 
 				"Please select atleast one.@@checkboxdays", "Please select atleast one.@@checkboxregion", "Please select atleast one.@@checkboxregion", "Please select atleast one.@@checkboxregion", 
 				"Please select atleast one.@@checkboxregion", "Please select atleast one.@@checkboxregion", "Please select atleast one.@@checkboxregion", "Please select atleast one.@@checkboxregion", 
@@ -417,52 +418,86 @@ String [] input;
 				"Checkbox Region TAS", "Checkbox Region VIC", "Checkbox Region WA"};
 		//Test Data starts at column 4 of adminPromotion.xls
 		int col= 4;
-	
-			for (int i = 0; i < xpaths.length; i++) {
-				//Get field type
-				String fieldType = "";
-				if (input[col] != null) {
-					fieldType = input[col].trim();
-				}
-				//Add 1 to move to field value
-				col = col + 1;
-				
-				String value = "";
-				if (input[col] != null) {
-					value = input[col].trim();
-				}
-				
-				try {
-					if (fieldType.equalsIgnoreCase("textbox")) {
-						
-						type(xpath(xpaths[i]), value);
+		boolean isHasError = false;
 		
-					} else if (fieldType.equalsIgnoreCase("checkbox")) {
-						click(xpath(xpaths[i]));
-//						Assert.assertFalse(isElementVisible(xpath(baseProdConstructionLabel)));
-					} else if (fieldType.equalsIgnoreCase("calendar")) {
-						
-					} else if (fieldType.equalsIgnoreCase("dropdown")) {
-						select(xpath(xpaths[i]), value);
-					} else if (fieldType.equalsIgnoreCase("list")) {
-						
-					} else if (fieldType.equalsIgnoreCase("numeric")) {
-						//test if numeric field is accepting character value
-						boolean isPass = testNumericField(i, xpaths, inputFields, value);
-						if (isPass) {
-							type(xpath(xpaths[i]), value);
-						}
-						
-					}
-				} catch (Exception e) {
-					fail("Fail to enter input in " + inputFields[i]);
-				}
-				//Add another 1 to prepare for the next field
-				col = col + 1;
-				pass("Success in filling of " + inputFields[i]);
+		for (int i = 0; i < xpaths.length; i++) {
+			//Get field type
+			String fieldType = "";
+			if (input[col] != null) {
+				fieldType = input[col].trim();
+			}
+			//Add 1 to move to field value
+			col = col + 1;
+			
+			String value = "";
+			if (input[col] != null) {
+				value = input[col].trim();
 			}
 			
+			try {
+				if (fieldType.equalsIgnoreCase("textbox")) {
+					
+					type(xpath(xpaths[i]), value);
+	
+				} else if (fieldType.equalsIgnoreCase("checkbox")) {
+					click(xpath(xpaths[i]));
+//						Assert.assertFalse(isElementVisible(xpath(baseProdConstructionLabel)));
+				} else if (fieldType.equalsIgnoreCase("calendar")) {
+					click(xpath(xpaths[i]));
+				} else if (fieldType.equalsIgnoreCase("dropdown")) {
+					selectDropdownOption(xpath(xpaths[i]), value);
+				} else if (fieldType.equalsIgnoreCase("list")) {
+					click(xpath(xpaths[i]));
+				} else if (fieldType.equalsIgnoreCase("numeric")) {
+					//test if numeric field is accepting character value
+					boolean isPass = testNumericField(i, xpaths, inputFields, value);
+					if (isPass) {
+						type(xpath(xpaths[i]), value);
+					}
+					
+				}
+			} catch (Exception e) {
+				fail("Fail to enter input in " + inputFields[i]);
+				isHasError = true;
+			}
+			//Add another 1 to prepare for the next field
+			col = col + 1;
+			pass("Success in filling of " + inputFields[i]);
+		}
+			
+		if (isHasError) {
+			fail("Unable to complete process due to error");
+		} else {
+			pass("COMPLETE!!!");
+		}
+		
+		try {
+			click(xpath(adminPromotionNew_Save));
+			checkFlashMessage();
+		} catch (InterruptedException | IOException e) {
+			fail("Error on clicking save button");
+		}
+	
 	}
+	
+	public void checkFlashMessage() {
+		try {
+			waitForElementPresent(xpath(adminLinkLogout));
+			pass("Flash message display");
+			
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			fail("Flash message did not display");
+		}
+		
+		Assert.assertTrue(isElementPresent(xpath(adminPromotion_FlashMessage)));
+		pass("Flash message is present");
+	}
+	
+	 public void selectDropdownOption(By by, String value) {
+	       Select dropdown = new Select(driver.findElement(by));
+	       dropdown.selectByVisibleText(value);
+	   }
 	
 	public boolean testNumericField(int index, String[] xpaths, String[] inputFields, String val) throws Exception {
 		boolean isPass = true;

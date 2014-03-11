@@ -424,7 +424,9 @@ public class ObjectReference {
     public static String adminPromotionNew_WeekdaysErrMsg = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/div/table/tbody/tr[31]/td[2]/div[8]";
     public static String adminPromotionNew_BaseProdErrMsg = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/div/table/tbody/tr[29]/td[2]/div";
     public static String adminPromotionNew_CodeMultiErrMsg = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/div/table/tbody/tr[11]/td[2]/div";
-    public static String adminPromotionNew_UserLimitErrMsg = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/div/table/tbody/tr[11]/td[2]/div";
+    public static String adminPromotionNew_UserLimitErrMsg = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td/div/table/tbody/tr[15]/td[2]/div";
+    public static String adminPromotion_FlashMessage = "//*[@id='flashMessage']";
+
 }
 
 
